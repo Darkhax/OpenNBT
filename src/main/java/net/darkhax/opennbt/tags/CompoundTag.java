@@ -90,7 +90,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @return Tag: The tag with the specified name.
      */
     @SuppressWarnings("unchecked")
-    public <T extends Tag> T get (String tagName) {
+    public <T extends Tag> T getTag (String tagName) {
         
         return (T) this.value.get(tagName);
     }
@@ -102,7 +102,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @return Tag: The previous tag associated with its name, or null if there wasn't one.
      */
     @SuppressWarnings("unchecked")
-    public <T extends Tag> T put (T tag) {
+    public <T extends Tag> T setTag (T tag) {
         
         return (T) this.value.put(tag.getName(), tag);
     }
@@ -114,7 +114,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @return Tag: The removed tag.
      */
     @SuppressWarnings("unchecked")
-    public <T extends Tag> T remove (String tagName) {
+    public <T extends Tag> T removeTag (String tagName) {
         
         return (T) this.value.remove(tagName);
     }
@@ -180,7 +180,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
             throw new IOException("Closing EndTag was not found!");
         }
         
-        tags.forEach(tag -> this.put(tag));
+        tags.forEach(tag -> this.setTag(tag));
     }
     
     @Override
