@@ -26,9 +26,8 @@ public class NBTIO {
      *
      * @param path: Path of the file.
      * @return CompoundTag: The read compound tag.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static CompoundTag readFile (String path) throws IOException {
+    public static CompoundTag readFile (String path) {
         
         return readFile(new File(path));
     }
@@ -38,9 +37,8 @@ public class NBTIO {
      *
      * @param file File: to read from.
      * @return CompoundTag: The read compound tag.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static CompoundTag readFile (File file) throws IOException {
+    public static CompoundTag readFile (File file) {
         
         return readFile(file, true);
     }
@@ -51,9 +49,8 @@ public class NBTIO {
      * @param path: Path of the file.
      * @param compressed: Whether the NBT file is compressed.
      * @return CompoundTag: The read compound tag.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static CompoundTag readFile (String path, boolean compressed) throws IOException {
+    public static CompoundTag readFile (String path, boolean compressed) {
         
         return readFile(new File(path), compressed);
     }
@@ -64,21 +61,30 @@ public class NBTIO {
      * @param file: File to read from.
      * @param compressed: Whether the NBT file is compressed.
      * @return CompoundTag: The read compound tag.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static CompoundTag readFile (File file, boolean compressed) throws IOException {
+    public static CompoundTag readFile (File file, boolean compressed) {
         
-        InputStream in = new FileInputStream(file);
-        
-        if (compressed)
-            in = new GZIPInputStream(in);
+        try {
             
-        Tag tag = readTag(new DataInputStream(in));
-        
-        if (!(tag instanceof CompoundTag))
-            throw new IOException("Root tag is not a CompoundTag!");
+            InputStream in = new FileInputStream(file);
             
-        return (CompoundTag) tag;
+            if (compressed)
+                in = new GZIPInputStream(in);
+                
+            Tag tag = readTag(new DataInputStream(in));
+            
+            if (!(tag instanceof CompoundTag))
+                throw new IOException("Root tag is not a CompoundTag!");
+                
+            return (CompoundTag) tag;
+        }
+        
+        catch (IOException e) {
+            
+            e.printStackTrace();
+        }
+        
+        return null;
     }
     
     /**
@@ -86,9 +92,8 @@ public class NBTIO {
      *
      * @param tag: Tag to write.
      * @param path: Path to write to.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static void writeFile (CompoundTag tag, String path) throws IOException {
+    public static void writeFile (CompoundTag tag, String path) {
         
         writeFile(tag, new File(path));
     }
@@ -98,9 +103,8 @@ public class NBTIO {
      *
      * @param tag: Tag to write.
      * @param file: File to write to.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static void writeFile (CompoundTag tag, File file) throws IOException {
+    public static void writeFile (CompoundTag tag, File file) {
         
         writeFile(tag, file, true);
     }
@@ -111,9 +115,8 @@ public class NBTIO {
      * @param tag Tag to write.
      * @param path Path to write to.
      * @param compressed Whether the NBT file should be compressed.
-     * @throws IOException If an I/O error occurs.
      */
-    public static void writeFile (CompoundTag tag, String path, boolean compressed) throws IOException {
+    public static void writeFile (CompoundTag tag, String path, boolean compressed) {
         
         writeFile(tag, new File(path), compressed);
     }
@@ -124,25 +127,32 @@ public class NBTIO {
      * @param tag: Tag to write.
      * @param file: File to write to.
      * @param compressed: Whether the NBT file should be compressed.
-     * @throws IOException: If an I/O error occurs.
      */
-    public static void writeFile (CompoundTag tag, File file, boolean compressed) throws IOException {
+    public static void writeFile (CompoundTag tag, File file, boolean compressed) {
         
-        if (!file.exists()) {
+        try {
             
-            if (file.getParentFile() != null && !file.getParentFile().exists())
-                file.getParentFile().mkdirs();
+            if (!file.exists()) {
                 
-            file.createNewFile();
+                if (file.getParentFile() != null && !file.getParentFile().exists())
+                    file.getParentFile().mkdirs();
+                    
+                file.createNewFile();
+            }
+            
+            OutputStream out = new FileOutputStream(file);
+            
+            if (compressed)
+                out = new GZIPOutputStream(out);
+                
+            writeTag(new DataOutputStream(out), tag);
+            out.close();
         }
         
-        OutputStream out = new FileOutputStream(file);
-        
-        if (compressed)
-            out = new GZIPOutputStream(out);
+        catch (IOException e) {
             
-        writeTag(new DataOutputStream(out), tag);
-        out.close();
+            e.printStackTrace();
+        }
     }
     
     /**
