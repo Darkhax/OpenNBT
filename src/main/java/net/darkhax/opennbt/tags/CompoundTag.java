@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -105,6 +106,329 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     public <T extends Tag> T setTag (T tag) {
         
         return (T) this.value.put(tag.getName(), tag);
+    }
+    
+    /**
+     * Sets a byte to the Compound Tag.
+     * 
+     * @param name: The name to store the byte under.
+     * @param value: The byte value to store.
+     */
+    public void setByte (String name, byte value) {
+        
+        this.value.put(name, new ByteTag(name, value));
+    }
+    
+    /**
+     * Gets a byte from the Compound Tag. If no tag is found with the given name, 0 will be
+     * returned.
+     * 
+     * @param name: The name of the byte tag.
+     * @return byte: The stored byte.
+     */
+    public byte getByte (String name) {
+        
+        return (this.value.containsKey(name)) ? (byte) value.get(name).getValue() : 0;
+    }
+    
+    /**
+     * Sets a short to the Compound Tag.
+     * 
+     * @param name: The name to store the short under.
+     * @param value: The short value to store.
+     */
+    public void setShort (String name, short value) {
+        
+        this.value.put(name, new ShortTag(name, value));
+    }
+    
+    /**
+     * Gets a short from the Compound Tag. If no tag is found with the given name, 0 will be
+     * returned.
+     * 
+     * @param name: The name of the short tag.
+     * @return short: The stored short.
+     */
+    public short getShort (String name) {
+        
+        return (this.value.containsKey(name)) ? (short) value.get(name).getValue() : 0;
+    }
+    
+    /**
+     * Sets an int to the Compound Tag.
+     * 
+     * @param name: The name to store the int under.
+     * @param value: The int value to store.
+     */
+    public void setInt (String name, int value) {
+        
+        this.value.put(name, new IntTag(name, value));
+    }
+    
+    /**
+     * Gets an int from the Compound Tag. If no tag is found with the given name, 0 will be
+     * returned.
+     * 
+     * @param name: The name of the int tag.
+     * @return int: The stored int.
+     */
+    public int getInt (String name) {
+        
+        return (this.value.containsKey(name)) ? (int) value.get(name).getValue() : 0;
+    }
+    
+    /**
+     * Sets a long to the Compound Tag.
+     * 
+     * @param name: The name to store the long under.
+     * @param value: The long to store.
+     */
+    public void setLong (String name, long value) {
+        
+        this.value.put(name, new LongTag(name, value));
+    }
+    
+    /**
+     * Get a long from the Compound Tag. If no tag is found with the given name, 0 will be
+     * returned.
+     * 
+     * @param name: The name of the long tag.
+     * @return long: The stored long.
+     */
+    public long getLong (String name) {
+        
+        return (this.value.containsKey(name)) ? (long) value.get(name).getValue() : 0;
+    }
+    
+    /**
+     * Sets a float to the Compound Tag.
+     * 
+     * @param name: The name to store the float under.
+     * @param value: The float value to store.
+     */
+    public void setFloat (String name, float value) {
+        
+        this.value.put(name, new FloatTag(name, value));
+    }
+    
+    /**
+     * Gets a float from the Compound Tag. If no tag is found with the given name, 0f will be
+     * returned.
+     * 
+     * @param name: The name of the float tag.
+     * @return float: The stored float.
+     */
+    public float getFloat (String name) {
+        
+        return (this.value.containsKey(name)) ? (float) value.get(name).getValue() : 0;
+    }
+    
+    /**
+     * Sets a double to the Compound Tag.
+     * 
+     * @param name: The name to store the double under.
+     * @param value: The double value to store.
+     */
+    public void setDouble (String name, double value) {
+        
+        this.value.put(name, new DoubleTag(name, value));
+    }
+    
+    /**
+     * Gets a double from the Compound Tag. If no tag is found with the given name, 0d will be
+     * returned.
+     * 
+     * @param name: The name of the double tag.
+     * @return double: The stored double.
+     */
+    public double getDouble (String name) {
+        
+        return (this.value.containsKey(name)) ? (double) value.get(name).getValue() : 0d;
+    }
+    
+    /**
+     * Sets a byte array to the Compound Tag.
+     * 
+     * @param name: The name to store the byte array under.
+     * @param array: The byte array to store.
+     */
+    public void setByteArray (String name, byte[] array) {
+        
+        this.value.put(name, new ByteArrayTag(name, array));
+    }
+    
+    /**
+     * Gets a byte array from the Compound Tag. If no tag is found with the given name, an
+     * empty array will be returned.
+     * 
+     * @param name: The name of the byte array tag.
+     * @return byte[]: The stored byte array.
+     */
+    public byte[] getByteArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (byte[]) value.get(name).getValue() : new byte[0];
+    }
+    
+    /**
+     * Sets a String to the Compound Tag.
+     * 
+     * @param name: The name to store the String under.
+     * @param value: The String to store.
+     */
+    public void setString (String name, String value) {
+        
+        this.value.put(name, new StringTag(name, value));
+    }
+    
+    /**
+     * Gets a String from the Compound Tag. If no tag is found with the given name, an empty
+     * string will be returned.
+     * 
+     * @param name: The name of the String tag.
+     * @return String: The stored String.
+     */
+    public String getString (String name) {
+        
+        return (this.value.containsKey(name)) ? (String) value.get(name).getValue() : "";
+    }
+    
+    /**
+     * Sets a List<Tag> to the Compound Tag.
+     * 
+     * @param name: The name to store the List<Tag> under.
+     * @param value: The Tag List to store.
+     */
+    public void setTagList (String name, List<Tag> value) {
+        
+        this.value.put(name, new ListTag(name, value));
+    }
+    
+    /**
+     * Gets a List<Tag> from the Compound Tag. If no tag is found with the given name, and
+     * empty List will be returned.
+     * 
+     * @param name: The name of the ListTag tag.
+     * @return List<Tag>: The stored ListTag.
+     */
+    public List<Tag> getTagList (String name) {
+        
+        return (this.value.containsKey(name)) ? (List<Tag>) value.get(name).getValue() : new ArrayList<Tag>();
+    }
+    
+    /**
+     * Sets a CompoundTag to the CompoundTag.
+     * 
+     * @param name: The name to store the CompoundTag under.
+     * @param value: The CompoundTag to store.
+     */
+    public void setCompoundTag (String name, CompoundTag value) {
+        
+        this.value.put(name, value);
+    }
+    
+    /**
+     * Gets a CompoundTag from the CompoundTag. If no CompoundTag is found with the given name,
+     * null will be returned.
+     * 
+     * @param name: The name of the CompoundTag tag.
+     * @return CompoundTag: The stored CompoundTag.
+     */
+    public CompoundTag getCompoundTag (String name) {
+        
+        return (this.value.containsKey(name)) ? (CompoundTag) value.get(name).getValue() : null;
+    }
+    
+    /**
+     * Sets an int array to the CompoundTag.
+     * 
+     * @param name: The name to store the int array under.
+     * @param array: The int array to store.
+     */
+    public void setIntArray (String name, int[] value) {
+        
+        this.value.put(name, new IntArrayTag(name, value));
+    }
+    
+    /**
+     * Gets an int array from the CompoundTag. If no Tag is found with the given name, an empty
+     * array will be returned.
+     * 
+     * @param name: The name of the int array tag.
+     * @return int[]: The stored int array.
+     */
+    public int[] getInArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (int[]) value.get(name).getValue() : new int[0];
+    }
+    
+    public void setDoubleArray (String name, double[] value) {
+        
+        this.value.put(name, new DoubleArrayTag(name, value));
+    }
+    
+    public double[] getDoubleArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (double[]) value.get(name).getValue() : new double[0];
+    }
+    
+    public void setFloatArray (String name, float[] value) {
+        
+        this.value.put(name, new FloatArrayTag(name, value));
+    }
+    
+    public float[] getFloatArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (float[]) value.get(name).getValue() : new float[0];
+    }
+    
+    public void setLongArray (String name, long[] value) {
+        
+        this.value.put(name, new LongArrayTag(name, value));
+    }
+    
+    public long[] getLongArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (long[]) value.get(name).getValue() : new long[0];
+    }
+    
+    public void setSerializableArray (String name, Serializable[] value) {
+        
+        this.value.put(name, new SerializableArrayTag(name, value));
+    }
+    
+    public Serializable[] getSerializableArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (Serializable[]) value.get(name).getValue() : new Serializable[0];
+    }
+    
+    public void setSerializableTag (String name, Serializable value) {
+        
+        this.value.put(name, new SerializableTag(name, value));
+    }
+    
+    public Serializable getSerializable (String name) {
+        
+        return (this.value.containsKey(name)) ? (Serializable) value.get(name) : null;
+    }
+    
+    public void setShortArray (String name, short[] value) {
+        
+        this.value.put(name, new ShortArrayTag(name, value));
+    }
+    
+    public short[] getShortArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (short[]) value.get(name).getValue() : new short[0];
+    }
+    
+    public void setStringArray (String name, String[] value) {
+        
+        this.value.put(name, new StringArrayTag(name, value));
+    }
+    
+    public String[] getStringArray (String name) {
+        
+        return (this.value.containsKey(name)) ? (String[]) value.get(name).getValue() : new String[0];
     }
     
     /**
