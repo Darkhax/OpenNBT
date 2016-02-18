@@ -22,7 +22,7 @@ public class TagRegistry {
     /**
      * The last ID to be found by the getNextID method.
      */
-    private static int lastID = 11;
+    private static int lastID = 80;
     
     static {
         
