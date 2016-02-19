@@ -90,7 +90,6 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @param tagName: Name of the tag.
      * @return Tag: The tag with the specified name.
      */
-    @SuppressWarnings("unchecked")
     public <T extends Tag> T getTag (String tagName) {
         
         return (T) this.value.get(tagName);
@@ -102,7 +101,6 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @param tag: Tag to put into this compound tag.
      * @return Tag: The previous tag associated with its name, or null if there wasn't one.
      */
-    @SuppressWarnings("unchecked")
     public <T extends Tag> T setTag (T tag) {
         
         return (T) this.value.put(tag.getName(), tag);
@@ -128,7 +126,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public byte getByte (String name) {
         
-        return (this.value.containsKey(name)) ? (byte) value.get(name).getValue() : 0;
+        return (this.value.containsKey(name)) ? (byte) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -151,7 +149,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public short getShort (String name) {
         
-        return (this.value.containsKey(name)) ? (short) value.get(name).getValue() : 0;
+        return (this.value.containsKey(name)) ? (short) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -174,7 +172,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public int getInt (String name) {
         
-        return (this.value.containsKey(name)) ? (int) value.get(name).getValue() : 0;
+        return (this.value.containsKey(name)) ? (int) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -197,7 +195,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public long getLong (String name) {
         
-        return (this.value.containsKey(name)) ? (long) value.get(name).getValue() : 0;
+        return (this.value.containsKey(name)) ? (long) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -220,7 +218,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public float getFloat (String name) {
         
-        return (this.value.containsKey(name)) ? (float) value.get(name).getValue() : 0;
+        return (this.value.containsKey(name)) ? (float) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -243,7 +241,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public double getDouble (String name) {
         
-        return (this.value.containsKey(name)) ? (double) value.get(name).getValue() : 0d;
+        return (this.value.containsKey(name)) ? (double) this.value.get(name).getValue() : 0d;
     }
     
     /**
@@ -266,7 +264,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public byte[] getByteArray (String name) {
         
-        return (this.value.containsKey(name)) ? (byte[]) value.get(name).getValue() : new byte[0];
+        return (this.value.containsKey(name)) ? (byte[]) this.value.get(name).getValue() : new byte[0];
     }
     
     /**
@@ -289,7 +287,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public String getString (String name) {
         
-        return (this.value.containsKey(name)) ? (String) value.get(name).getValue() : "";
+        return (this.value.containsKey(name)) ? (String) this.value.get(name).getValue() : "";
     }
     
     /**
@@ -310,9 +308,10 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @param name: The name of the ListTag tag.
      * @return List<Tag>: The stored ListTag.
      */
+    
     public List<Tag> getTagList (String name) {
         
-        return (this.value.containsKey(name)) ? (List<Tag>) value.get(name).getValue() : new ArrayList<Tag>();
+        return (this.value.containsKey(name)) ? (List<Tag>) this.value.get(name).getValue() : new ArrayList<Tag>();
     }
     
     /**
@@ -335,14 +334,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public CompoundTag getCompoundTag (String name) {
         
-        return (this.value.containsKey(name)) ? (CompoundTag) value.get(name).getValue() : null;
+        return (this.value.containsKey(name)) ? (CompoundTag) this.value.get(name).getValue() : null;
     }
     
     /**
      * Sets an int array to the CompoundTag.
      * 
      * @param name: The name to store the int array under.
-     * @param array: The int array to store.
+     * @param value: The int array to store.
      */
     public void setIntArray (String name, int[] value) {
         
@@ -358,77 +357,162 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public int[] getInArray (String name) {
         
-        return (this.value.containsKey(name)) ? (int[]) value.get(name).getValue() : new int[0];
+        return (this.value.containsKey(name)) ? (int[]) this.value.get(name).getValue() : new int[0];
     }
     
+    /**
+     * Sets a double array to the CompoundTag.
+     * 
+     * @param name: The name to store the double array under.
+     * @param value: The double array to store.
+     */
     public void setDoubleArray (String name, double[] value) {
         
         this.value.put(name, new DoubleArrayTag(name, value));
     }
     
+    /**
+     * Gets a double array from the CompoundTag. If no Tag is found with the given name, an
+     * empty array will be returned.
+     * 
+     * @param name: The name of the double array tag.
+     * @return double[]: The stored double array.
+     */
     public double[] getDoubleArray (String name) {
         
-        return (this.value.containsKey(name)) ? (double[]) value.get(name).getValue() : new double[0];
+        return (this.value.containsKey(name)) ? (double[]) this.value.get(name).getValue() : new double[0];
     }
     
+    /**
+     * Sets a float array to the CompoundTag.
+     * 
+     * @param name: The name to store the float array under.
+     * @param value: The float array to store.
+     */
     public void setFloatArray (String name, float[] value) {
         
         this.value.put(name, new FloatArrayTag(name, value));
     }
     
+    /**
+     * Sets a float array to the CompoundTag.
+     * 
+     * @param name: The name to store the float array under.
+     * @param value: The float array to store.
+     */
     public float[] getFloatArray (String name) {
         
-        return (this.value.containsKey(name)) ? (float[]) value.get(name).getValue() : new float[0];
+        return (this.value.containsKey(name)) ? (float[]) this.value.get(name).getValue() : new float[0];
     }
     
+    /**
+     * Sets a long array to the CompoundTag.
+     * 
+     * @param name: The name to store the long array under.
+     * @param value: The double long to store.
+     */
     public void setLongArray (String name, long[] value) {
         
         this.value.put(name, new LongArrayTag(name, value));
     }
     
+    /**
+     * Sets a long array to the CompoundTag.
+     * 
+     * @param name: The name to store the long array under.
+     * @param value: The long array to store.
+     */
     public long[] getLongArray (String name) {
         
-        return (this.value.containsKey(name)) ? (long[]) value.get(name).getValue() : new long[0];
+        return (this.value.containsKey(name)) ? (long[]) this.value.get(name).getValue() : new long[0];
     }
     
+    /**
+     * Sets a serializable array to the CompoundTag.
+     * 
+     * @param name: The name to store the serializable array under.
+     * @param value: The serializable array to store.
+     */
     public void setSerializableArray (String name, Serializable[] value) {
         
         this.value.put(name, new SerializableArrayTag(name, value));
     }
     
+    /**
+     * Sets a serializable array to the CompoundTag.
+     * 
+     * @param name: The name to store the serializable array under.
+     * @param value: The serializable array to store.
+     */
     public Serializable[] getSerializableArray (String name) {
         
-        return (this.value.containsKey(name)) ? (Serializable[]) value.get(name).getValue() : new Serializable[0];
+        return (this.value.containsKey(name)) ? (Serializable[]) this.value.get(name).getValue() : new Serializable[0];
     }
     
+    /**
+     * Sets a serializable object to the CompoundTag.
+     * 
+     * @param name: The name to store the serializable object under.
+     * @param value: The serializable object to store.
+     */
     public void setSerializableTag (String name, Serializable value) {
         
         this.value.put(name, new SerializableTag(name, value));
     }
     
+    /**
+     * Sets a serializable object to the CompoundTag.
+     * 
+     * @param name: The name to store the serializable object under.
+     * @param value: The serializable object to store.
+     */
     public Serializable getSerializable (String name) {
         
-        return (this.value.containsKey(name)) ? (Serializable) value.get(name) : null;
+        return (this.value.containsKey(name)) ? (Serializable) this.value.get(name) : null;
     }
     
+    /**
+     * Sets a short array to the CompoundTag.
+     * 
+     * @param name: The name to store the short array under.
+     * @param value: The short array to store.
+     */
     public void setShortArray (String name, short[] value) {
         
         this.value.put(name, new ShortArrayTag(name, value));
     }
     
+    /**
+     * Sets a short array to the CompoundTag.
+     * 
+     * @param name: The name to store the short array under.
+     * @param value: The short array to store.
+     */
     public short[] getShortArray (String name) {
         
-        return (this.value.containsKey(name)) ? (short[]) value.get(name).getValue() : new short[0];
+        return (this.value.containsKey(name)) ? (short[]) this.value.get(name).getValue() : new short[0];
     }
     
+    /**
+     * Sets a string array to the CompoundTag.
+     * 
+     * @param name: The name to store the string array under.
+     * @param value: The string array to store.
+     */
     public void setStringArray (String name, String[] value) {
         
         this.value.put(name, new StringArrayTag(name, value));
     }
     
+    /**
+     * Sets a string array to the CompoundTag.
+     * 
+     * @param name: The name to store the string array under.
+     * @param value: The string array to store.
+     */
     public String[] getStringArray (String name) {
         
-        return (this.value.containsKey(name)) ? (String[]) value.get(name).getValue() : new String[0];
+        return (this.value.containsKey(name)) ? (String[]) this.value.get(name).getValue() : new String[0];
     }
     
     /**
@@ -437,7 +521,6 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @param tagName: Name of the tag to remove.
      * @return Tag: The removed tag.
      */
-    @SuppressWarnings("unchecked")
     public <T extends Tag> T removeTag (String tagName) {
         
         return (T) this.value.remove(tagName);
