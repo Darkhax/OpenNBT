@@ -16,7 +16,7 @@ String getVersionFromJava(File file) {
 
     String major = "0";
     String minor = "0";
-	
+
     String build = System.getenv("BUILD_NUMBER") ?: "0";
     def outfile = "";
     def ln = System.getProperty("line.separator")
@@ -39,4 +39,40 @@ String getVersionFromJava(File file) {
     file.write(outfile);
 
     return "$major.$minor.$build";
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    classifier = 'javadoc'
+}
+
+task buildJar(type: Jar) {
+    from sourceSets.main.output
+}
+
+artifacts {
+    archives buildJar
+    archives sourcesJar
+    archives javadocJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file:///var/www/html/maven")
+        }
+    }
 }
