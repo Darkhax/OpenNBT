@@ -17,7 +17,7 @@ public class DoubleTag extends Tag {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public DoubleTag(String name) {
         
@@ -27,8 +27,8 @@ public class DoubleTag extends Tag {
     /**
      * Creates a tag with the specified name and value.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
+     * @param name The name of the tag.
+     * @param value The value of the tag.
      */
     public DoubleTag(String name, double value) {
         
@@ -45,7 +45,7 @@ public class DoubleTag extends Tag {
     /**
      * Sets the value of this tag.
      *
-     * @param value: New value of this tag.
+     * @param value New value of this tag.
      */
     public void setValue (double value) {
         

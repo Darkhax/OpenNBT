@@ -51,9 +51,9 @@ public class TagRegistry {
      * Registers a tag class into the system. If the ID or Class has already been used, an
      * exception will be thrown.
      * 
-     * @param id: The ID to register the tag under.
-     * @param tag: The Tag class to register.
-     * @throws TagRegisterException: Thrown if the ID or Tag has already been used.
+     * @param id The ID to register the tag under.
+     * @param tag The Tag class to register.
+     * @throws TagRegisterException Thrown if the ID or Tag has already been used.
      */
     public static void register (int id, Class<? extends Tag> tag) throws TagRegisterException {
         
@@ -70,8 +70,8 @@ public class TagRegistry {
     /**
      * Gets a class that is associated with a tag ID.
      * 
-     * @param id: The tag ID to search for.
-     * @return Class: The Class of the Tag associated with the ID.
+     * @param id The tag ID to search for.
+     * @return Class The Class of the Tag associated with the ID.
      */
     public static Class<? extends Tag> getClassFor (int id) {
         
@@ -84,8 +84,8 @@ public class TagRegistry {
     /**
      * Gets an ID from its associated Tag class.
      * 
-     * @param clazz: The Class to search for.
-     * @return int: The ID associated with the Tag class. -1 means the class has no associated
+     * @param clazz The Class to search for.
+     * @return int The ID associated with the Tag class. -1 means the class has no associated
      *         ID.
      */
     public static int getIdFor (Class<? extends Tag> clazz) {
@@ -100,10 +100,10 @@ public class TagRegistry {
      * Creates a new instance of the tag with the specified ID using the basic string
      * constructor.
      * 
-     * @param id: The ID of the tag to create.
-     * @param tagName: The name to give this tag.
-     * @return Tag: The newly created Tag.
-     * @throws TagCreateException: Thrown if an error occurred while constructing the tag.
+     * @param id The ID of the tag to create.
+     * @param tagName The name to give this tag.
+     * @return Tag The newly created Tag.
+     * @throws TagCreateException Thrown if an error occurred while constructing the tag.
      */
     public static Tag createInstance (int id, String tagName) throws TagCreateException {
         
@@ -128,7 +128,7 @@ public class TagRegistry {
      * positive ID values remain, an exception will be thrown. That is extremely unlikely, as
      * there are 2147483647 positive ID values.
      * 
-     * @return int: An unused ID value to use for the tag registry.
+     * @return int An unused ID value to use for the tag registry.
      */
     public static int getNextID () {
         

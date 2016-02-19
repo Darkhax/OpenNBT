@@ -17,7 +17,7 @@ public class ConverterRegisterException extends RuntimeException {
     /**
      * Constructs a new ConverterRegisterException with an additional message.
      * 
-     * @param message: An additional string message.
+     * @param message An additional string message.
      */
     public ConverterRegisterException(String message) {
         
@@ -27,7 +27,7 @@ public class ConverterRegisterException extends RuntimeException {
     /**
      * Constructs a new ConverterRegisterException with an additional cause.
      * 
-     * @param cause: An additional cause to add to the exception.
+     * @param cause An additional cause to add to the exception.
      */
     public ConverterRegisterException(Throwable cause) {
         
@@ -37,8 +37,8 @@ public class ConverterRegisterException extends RuntimeException {
     /**
      * Constructs a new ConverterRegisterException with an additional message and cause.
      * 
-     * @param message: An additional string message.
-     * @param cause: An additional cause to add to the exception.
+     * @param message An additional string message.
+     * @param cause An additional cause to add to the exception.
      */
     public ConverterRegisterException(String message, Throwable cause) {
         

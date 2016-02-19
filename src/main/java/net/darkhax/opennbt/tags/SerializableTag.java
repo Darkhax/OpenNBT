@@ -20,7 +20,7 @@ public class SerializableTag extends Tag {
     /**
      * Constructs a new SerializableTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public SerializableTag(String name) {
         
@@ -30,8 +30,8 @@ public class SerializableTag extends Tag {
     /**
      * Constructs a new SerializableTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The Serializable object for the tag.
+     * @param name The name of the tag.
+     * @param value The Serializable object for the tag.
      */
     public SerializableTag(String name, Serializable value) {
         
@@ -42,7 +42,7 @@ public class SerializableTag extends Tag {
     /**
      * Sets the value of the tag.
      * 
-     * @param value: The value to store in the tag.
+     * @param value The value to store in the tag.
      */
     public void setValue (Serializable value) {
         

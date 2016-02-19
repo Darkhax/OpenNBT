@@ -17,7 +17,7 @@ public class StringArrayTag extends Tag {
     /**
      * Constructs a new StringArrayTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public StringArrayTag(String name) {
         
@@ -27,8 +27,8 @@ public class StringArrayTag extends Tag {
     /**
      * Constructs a new StringArrayTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The String array value for the tag.
+     * @param name The name of the tag.
+     * @param value The String array value for the tag.
      */
     public StringArrayTag(String name, String[] value) {
         
@@ -45,7 +45,7 @@ public class StringArrayTag extends Tag {
     /**
      * Sets the value of the tag.
      * 
-     * @param value: The value to store in the tag.
+     * @param value The value to store in the tag.
      */
     public void setValue (String[] value) {
         
@@ -58,8 +58,8 @@ public class StringArrayTag extends Tag {
     /**
      * Gets a value from the stored String array based on the index.
      * 
-     * @param index: The index of the value within the stored array.
-     * @return String: The value stored at the index in the array.
+     * @param index The index of the value within the stored array.
+     * @return String The value stored at the index in the array.
      */
     public String getValue (int index) {
         
@@ -69,8 +69,8 @@ public class StringArrayTag extends Tag {
     /**
      * Sets a value to the stored String array at the given index.
      * 
-     * @param index: The index to store a new String value at.
-     * @param value: The new String to store in the array.
+     * @param index The index to store a new String value at.
+     * @param value The new String to store in the array.
      */
     public void setValue (int index, String value) {
         
@@ -80,7 +80,7 @@ public class StringArrayTag extends Tag {
     /**
      * Gets the length of the array stored in the tag.
      * 
-     * @return int: The length of the stored array.
+     * @return int The length of the stored array.
      */
     public int length () {
         

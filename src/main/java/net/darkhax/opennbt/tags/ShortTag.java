@@ -17,7 +17,7 @@ public class ShortTag extends Tag {
     /**
      * Constructs a new ShortTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public ShortTag(String name) {
         
@@ -27,8 +27,8 @@ public class ShortTag extends Tag {
     /**
      * Constructs a new ShortTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The short value for the tag.
+     * @param name The name of the tag.
+     * @param value The short value for the tag.
      */
     public ShortTag(String name, short value) {
         
@@ -39,7 +39,7 @@ public class ShortTag extends Tag {
     /**
      * Sets the short value of the tag.
      * 
-     * @param value: The value to store in the tag.
+     * @param value The value to store in the tag.
      */
     public void setValue (short value) {
         

@@ -71,10 +71,10 @@ public class ConverterRegistry {
      * Registers a converter with the converter registry. Will throw an exception if the tag
      * has already been registered.
      *
-     * @param tag: Tag type class to register the converter to.
-     * @param type: Value type class to register the converter to.
-     * @param converter: Converter to register.
-     * @throws ConverterRegisterException: If an error occurs while registering the converter.
+     * @param tag Tag type class to register the converter to.
+     * @param type Value type class to register the converter to.
+     * @param converter Converter to register.
+     * @throws ConverterRegisterException If an error occurs while registering the converter.
      */
     public static <T extends Tag, V> void register (Class<T> tag, Class<V> type, TagConverter<T, V> converter) throws ConverterRegisterException {
         
@@ -91,9 +91,9 @@ public class ConverterRegistry {
     /**
      * Converts the given tag to a value.
      *
-     * @param tag: Tag to convert.
-     * @return V: The converted value.
-     * @throws ConversionException: If a suitable converter could not be found.
+     * @param tag Tag to convert.
+     * @return V The converted value.
+     * @throws ConversionException If a suitable converter could not be found.
      */
     @SuppressWarnings("unchecked")
     public static <T extends Tag, V> V convertToValue (T tag) throws ConversionException {
@@ -111,10 +111,10 @@ public class ConverterRegistry {
     /**
      * Converts the given value to a tag.
      *
-     * @param name: Name of the resulting tag.
-     * @param value: Value to convert.
-     * @return Tag: The converted tag.
-     * @throws ConversionException: If a suitable converter could not be found.
+     * @param name Name of the resulting tag.
+     * @param value Value to convert.
+     * @return Tag The converted tag.
+     * @throws ConversionException If a suitable converter could not be found.
      */
     @SuppressWarnings("unchecked")
     public static <V, T extends Tag> T convertToTag (String name, V value) throws ConversionException {
@@ -152,8 +152,8 @@ public class ConverterRegistry {
     /**
      * Gets all classes and super classes from a class.
      * 
-     * @param clazz: The class to grab classes from.
-     * @return Set<Class>: A Set of classes.
+     * @param clazz The class to grab classes from.
+     * @return Set<Class> A Set of classes.
      */
     private static Set<Class<?>> getAllClasses (Class<?> clazz) {
         
@@ -180,8 +180,8 @@ public class ConverterRegistry {
     /**
      * Gets all interfaces from a class.
      * 
-     * @param clazz: The class to grab interfaces from.
-     * @return Set<Class>: A set of interface classes.
+     * @param clazz The class to grab interfaces from.
+     * @return Set<Class> A set of interface classes.
      */
     private static Set<Class<?>> getAllSuperInterfaces (Class<?> clazz) {
         

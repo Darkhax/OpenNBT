@@ -20,7 +20,7 @@ public class SerializableArrayTag extends Tag {
     /**
      * Constructs a new SerializableArrayTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public SerializableArrayTag(String name) {
         
@@ -30,8 +30,8 @@ public class SerializableArrayTag extends Tag {
     /**
      * Constructs a new SerializableArrayTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The Serializable Array for the tag.
+     * @param name The name of the tag.
+     * @param value The Serializable Array for the tag.
      */
     public SerializableArrayTag(String name, Serializable[] value) {
         
@@ -48,7 +48,7 @@ public class SerializableArrayTag extends Tag {
     /**
      * Sets the value of the tag.
      * 
-     * @param value: The new value for the tag.
+     * @param value The new value for the tag.
      */
     public void setValue (Serializable[] value) {
         
@@ -61,8 +61,8 @@ public class SerializableArrayTag extends Tag {
     /**
      * Gets the Serializable object stored at the specified index within the array.
      * 
-     * @param index: The index of the value being searched for.
-     * @return Serializable: The value stored at the specified index.
+     * @param index The index of the value being searched for.
+     * @return Serializable The value stored at the specified index.
      */
     public Serializable getValue (int index) {
         
@@ -72,8 +72,8 @@ public class SerializableArrayTag extends Tag {
     /**
      * Sets the value at the specified index.
      * 
-     * @param index: The index to set the value at.
-     * @param value: The value to store.
+     * @param index The index to set the value at.
+     * @param value The value to store.
      */
     public void setValue (int index, Serializable value) {
         
@@ -83,7 +83,7 @@ public class SerializableArrayTag extends Tag {
     /**
      * Gets the length of the tags array.
      *
-     * @return int: The tag's array length.
+     * @return int The tag's array length.
      */
     public int length () {
         

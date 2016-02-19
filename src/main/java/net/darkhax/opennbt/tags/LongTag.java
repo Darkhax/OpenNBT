@@ -17,7 +17,7 @@ public class LongTag extends Tag {
     /**
      * Constructs a new LongTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public LongTag(String name) {
         
@@ -27,8 +27,8 @@ public class LongTag extends Tag {
     /**
      * Constructs a new LongTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The Long value for the tag.
+     * @param name The name of the tag.
+     * @param value The Long value for the tag.
      */
     public LongTag(String name, long value) {
         
@@ -39,7 +39,7 @@ public class LongTag extends Tag {
     /**
      * Sets the value of the tag.
      * 
-     * @param value: The value to store in the tag.
+     * @param value The value to store in the tag.
      */
     public void setValue (long value) {
         

@@ -17,7 +17,7 @@ public class StringTag extends Tag {
     /**
      * Constructs a new StringTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public StringTag(String name) {
         
@@ -27,8 +27,8 @@ public class StringTag extends Tag {
     /**
      * Constructs a new StringTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The String value for the tag.
+     * @param name The name of the tag.
+     * @param value The String value for the tag.
      */
     public StringTag(String name, String value) {
         
@@ -39,7 +39,7 @@ public class StringTag extends Tag {
     /**
      * Sets the value of the tag.
      *
-     * @param value: The value to store in the tag.
+     * @param value The value to store in the tag.
      */
     public void setValue (String value) {
         

@@ -17,7 +17,7 @@ public class ConversionException extends RuntimeException {
     /**
      * Constructs a new ConversionException with an additional message.
      * 
-     * @param message: A string message to add to the exception.
+     * @param message A string message to add to the exception.
      */
     public ConversionException(String message) {
         
@@ -27,7 +27,7 @@ public class ConversionException extends RuntimeException {
     /**
      * Constructs a new ConversionException with an additional cause.
      * 
-     * @param cause: The additional cause to add to the exception.
+     * @param cause The additional cause to add to the exception.
      */
     public ConversionException(Throwable cause) {
         
@@ -37,8 +37,8 @@ public class ConversionException extends RuntimeException {
     /**
      * Constructs a new ConversionException with an additional message and cause.
      * 
-     * @param message: A string message to add to the exception.
-     * @param cause: The additional cause to add to the exception.
+     * @param message A string message to add to the exception.
+     * @param cause The additional cause to add to the exception.
      */
     public ConversionException(String message, Throwable cause) {
         

@@ -17,7 +17,7 @@ public class LongArrayTag extends Tag {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public LongArrayTag(String name) {
         this(name, new long[0]);
@@ -26,8 +26,8 @@ public class LongArrayTag extends Tag {
     /**
      * Creates a tag with the specified name and value.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
+     * @param name The name of the tag.
+     * @param value The value of the tag.
      */
     public LongArrayTag(String name, long[] value) {
         super(name);
@@ -43,7 +43,7 @@ public class LongArrayTag extends Tag {
     /**
      * Sets the value of the tag.
      *
-     * @param value: The new value of the tag.
+     * @param value The new value of the tag.
      */
     public void setValue (long[] value) {
         
@@ -56,8 +56,8 @@ public class LongArrayTag extends Tag {
     /**
      * Gets a value in the tag's array.
      *
-     * @param index: Index of the value.
-     * @return long: The value at the given index.
+     * @param index Index of the value.
+     * @return long The value at the given index.
      */
     public long getValue (int index) {
         
@@ -67,8 +67,8 @@ public class LongArrayTag extends Tag {
     /**
      * Sets a value in the tag's array.
      *
-     * @param index: Index of the value.
-     * @param value: Value to set.
+     * @param index Index of the value.
+     * @param value Value to set.
      */
     public void setValue (int index, long value) {
         
@@ -78,7 +78,7 @@ public class LongArrayTag extends Tag {
     /**
      * Gets the length of the tag's array.
      *
-     * @return int: The tag's array length.
+     * @return int The tag's array length.
      */
     public int length () {
         

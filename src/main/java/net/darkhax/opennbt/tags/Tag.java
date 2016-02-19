@@ -18,7 +18,7 @@ public abstract class Tag implements Cloneable {
     /**
      * Constructs a new Tag with the specified name.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public Tag(String name) {
         
@@ -28,7 +28,7 @@ public abstract class Tag implements Cloneable {
     /**
      * Gets the name of the tag.
      *
-     * @return String: The name of the tag.
+     * @return String The name of the tag.
      */
     public final String getName () {
         
@@ -38,23 +38,23 @@ public abstract class Tag implements Cloneable {
     /**
      * Gets the value of this tag.
      *
-     * @return Object: The value of this tag.
+     * @return Object The value of this tag.
      */
     public abstract Object getValue ();
     
     /**
      * Reads the tag from an input stream.
      *
-     * @param in: Stream to write to.
-     * @throws IOException: If an I/O error occurs.
+     * @param in Stream to write to.
+     * @throws IOException If an I/O error occurs.
      */
     public abstract void read (DataInputStream in) throws IOException;
     
     /**
      * Writes this tag to an output stream.
      *
-     * @param out: Stream to write to.
-     * @throws IOException: If an I/O error occurs.
+     * @param out Stream to write to.
+     * @throws IOException If an I/O error occurs.
      */
     public abstract void write (DataOutputStream out) throws IOException;
     

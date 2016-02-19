@@ -17,7 +17,7 @@ public class ShortArrayTag extends Tag {
     /**
      * Construct a new ShortArrayTag with no value.
      * 
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public ShortArrayTag(String name) {
         
@@ -27,8 +27,8 @@ public class ShortArrayTag extends Tag {
     /**
      * Constructs a new ShortArrayTag with a name and a value.
      * 
-     * @param name: The name of the tag.
-     * @param value: The Short Array value for the tag.
+     * @param name The name of the tag.
+     * @param value The Short Array value for the tag.
      */
     public ShortArrayTag(String name, short[] value) {
         
@@ -39,7 +39,7 @@ public class ShortArrayTag extends Tag {
     /**
      * Sets the value of the array.
      * 
-     * @param value: The short array to store in the tag.
+     * @param value The short array to store in the tag.
      */
     public void setValue (short[] value) {
         
@@ -58,8 +58,8 @@ public class ShortArrayTag extends Tag {
     /**
      * Gets the value at the index within the stored array.
      * 
-     * @param index: The index of the value to retrieve within the stored array.
-     * @return short: The stored value.
+     * @param index The index of the value to retrieve within the stored array.
+     * @return short The stored value.
      */
     public short getValue (int index) {
         
@@ -69,8 +69,8 @@ public class ShortArrayTag extends Tag {
     /**
      * Sets the value at the indexed position in the stored array.
      * 
-     * @param index: The index to store the value at.
-     * @param value: The value to store in the array.
+     * @param index The index to store the value at.
+     * @param value The value to store in the array.
      */
     public void setValue (int index, short value) {
         
@@ -80,7 +80,7 @@ public class ShortArrayTag extends Tag {
     /**
      * Gets the length of the stored short array.
      * 
-     * @return int: The length of the stored array.
+     * @return int The length of the stored array.
      */
     public int length () {
         

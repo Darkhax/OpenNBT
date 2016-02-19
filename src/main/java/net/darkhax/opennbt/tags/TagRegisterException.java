@@ -17,7 +17,7 @@ public class TagRegisterException extends RuntimeException {
     /**
      * Constructs a TagRegisterException with a special message.
      * 
-     * @param message: A special message for the exception.
+     * @param message A special message for the exception.
      */
     public TagRegisterException(String message) {
         
@@ -27,7 +27,7 @@ public class TagRegisterException extends RuntimeException {
     /**
      * Constructs a TagRegisterException using a Throwable as a cause.
      * 
-     * @param cause: The cause of the exception.
+     * @param cause The cause of the exception.
      */
     public TagRegisterException(Throwable cause) {
         
@@ -37,8 +37,8 @@ public class TagRegisterException extends RuntimeException {
     /**
      * Constructs a TagRegisterException using a Throwable and a special message.
      * 
-     * @param message: A special message for the exception.
-     * @param cause: The cause of the exception.
+     * @param message A special message for the exception.
+     * @param cause The cause of the exception.
      */
     public TagRegisterException(String message, Throwable cause) {
         

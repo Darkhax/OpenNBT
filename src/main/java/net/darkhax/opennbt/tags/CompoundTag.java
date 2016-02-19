@@ -28,7 +28,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public CompoundTag(String name) {
         
@@ -38,8 +38,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
+     * @param name The name of the tag.
+     * @param value The value of the tag.
      */
     public CompoundTag(String name, Map<String, Tag> value) {
         
@@ -56,7 +56,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets the value of this tag.
      *
-     * @param value: New value of this tag.
+     * @param value New value of this tag.
      */
     public void setValue (Map<String, Tag> value) {
         
@@ -66,7 +66,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Checks whether the compound tag is empty.
      *
-     * @return boolean: Whether the compound tag is empty.
+     * @return boolean Whether the compound tag is empty.
      */
     public boolean isEmpty () {
         
@@ -76,8 +76,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Checks whether the compound tag contains a tag with the specified name.
      *
-     * @param tagName: Name of the tag to check for.
-     * @return boolean: Whether the compound tag contains a tag with the specified name.
+     * @param tagName Name of the tag to check for.
+     * @return boolean Whether the compound tag contains a tag with the specified name.
      */
     public boolean hasTag (String tagName) {
         
@@ -87,8 +87,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Gets the tag with the specified name.
      *
-     * @param tagName: Name of the tag.
-     * @return Tag: The tag with the specified name.
+     * @param tagName Name of the tag.
+     * @return Tag The tag with the specified name.
      */
     public <T extends Tag> T getTag (String tagName) {
         
@@ -98,8 +98,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Puts the tag into this compound tag.
      *
-     * @param tag: Tag to put into this compound tag.
-     * @return Tag: The previous tag associated with its name, or null if there wasn't one.
+     * @param tag Tag to put into this compound tag.
+     * @return Tag The previous tag associated with its name, or null if there wasn't one.
      */
     public <T extends Tag> T setTag (T tag) {
         
@@ -109,8 +109,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a byte to the Compound Tag.
      * 
-     * @param name: The name to store the byte under.
-     * @param value: The byte value to store.
+     * @param name The name to store the byte under.
+     * @param value The byte value to store.
      */
     public void setByte (String name, byte value) {
         
@@ -121,8 +121,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a byte from the Compound Tag. If no tag is found with the given name, 0 will be
      * returned.
      * 
-     * @param name: The name of the byte tag.
-     * @return byte: The stored byte.
+     * @param name The name of the byte tag.
+     * @return byte The stored byte.
      */
     public byte getByte (String name) {
         
@@ -132,8 +132,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a short to the Compound Tag.
      * 
-     * @param name: The name to store the short under.
-     * @param value: The short value to store.
+     * @param name The name to store the short under.
+     * @param value The short value to store.
      */
     public void setShort (String name, short value) {
         
@@ -144,8 +144,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a short from the Compound Tag. If no tag is found with the given name, 0 will be
      * returned.
      * 
-     * @param name: The name of the short tag.
-     * @return short: The stored short.
+     * @param name The name of the short tag.
+     * @return short The stored short.
      */
     public short getShort (String name) {
         
@@ -155,8 +155,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets an int to the Compound Tag.
      * 
-     * @param name: The name to store the int under.
-     * @param value: The int value to store.
+     * @param name The name to store the int under.
+     * @param value The int value to store.
      */
     public void setInt (String name, int value) {
         
@@ -167,8 +167,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets an int from the Compound Tag. If no tag is found with the given name, 0 will be
      * returned.
      * 
-     * @param name: The name of the int tag.
-     * @return int: The stored int.
+     * @param name The name of the int tag.
+     * @return int The stored int.
      */
     public int getInt (String name) {
         
@@ -178,8 +178,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a long to the Compound Tag.
      * 
-     * @param name: The name to store the long under.
-     * @param value: The long to store.
+     * @param name The name to store the long under.
+     * @param value The long to store.
      */
     public void setLong (String name, long value) {
         
@@ -190,8 +190,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Get a long from the Compound Tag. If no tag is found with the given name, 0 will be
      * returned.
      * 
-     * @param name: The name of the long tag.
-     * @return long: The stored long.
+     * @param name The name of the long tag.
+     * @return long The stored long.
      */
     public long getLong (String name) {
         
@@ -201,8 +201,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a float to the Compound Tag.
      * 
-     * @param name: The name to store the float under.
-     * @param value: The float value to store.
+     * @param name The name to store the float under.
+     * @param value The float value to store.
      */
     public void setFloat (String name, float value) {
         
@@ -213,8 +213,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a float from the Compound Tag. If no tag is found with the given name, 0f will be
      * returned.
      * 
-     * @param name: The name of the float tag.
-     * @return float: The stored float.
+     * @param name The name of the float tag.
+     * @return float The stored float.
      */
     public float getFloat (String name) {
         
@@ -224,8 +224,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a double to the Compound Tag.
      * 
-     * @param name: The name to store the double under.
-     * @param value: The double value to store.
+     * @param name The name to store the double under.
+     * @param value The double value to store.
      */
     public void setDouble (String name, double value) {
         
@@ -236,8 +236,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a double from the Compound Tag. If no tag is found with the given name, 0d will be
      * returned.
      * 
-     * @param name: The name of the double tag.
-     * @return double: The stored double.
+     * @param name The name of the double tag.
+     * @return double The stored double.
      */
     public double getDouble (String name) {
         
@@ -247,8 +247,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a byte array to the Compound Tag.
      * 
-     * @param name: The name to store the byte array under.
-     * @param value: The byte array to store.
+     * @param name The name to store the byte array under.
+     * @param value The byte array to store.
      */
     public void setByteArray (String name, byte[] value) {
         
@@ -259,8 +259,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a byte array from the Compound Tag. If no tag is found with the given name, an
      * empty array will be returned.
      * 
-     * @param name: The name of the byte array tag.
-     * @return byte[]: The stored byte array.
+     * @param name The name of the byte array tag.
+     * @return byte[] The stored byte array.
      */
     public byte[] getByteArray (String name) {
         
@@ -270,8 +270,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a String to the Compound Tag.
      * 
-     * @param name: The name to store the String under.
-     * @param value: The String to store.
+     * @param name The name to store the String under.
+     * @param value The String to store.
      */
     public void setString (String name, String value) {
         
@@ -282,8 +282,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a String from the Compound Tag. If no tag is found with the given name, an empty
      * string will be returned.
      * 
-     * @param name: The name of the String tag.
-     * @return String: The stored String.
+     * @param name The name of the String tag.
+     * @return String The stored String.
      */
     public String getString (String name) {
         
@@ -293,8 +293,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a List<Tag> to the Compound Tag.
      * 
-     * @param name: The name to store the List<Tag> under.
-     * @param value: The Tag List to store.
+     * @param name The name to store the List<Tag> under.
+     * @param value The Tag List to store.
      */
     public void setTagList (String name, List<Tag> value) {
         
@@ -305,8 +305,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a List<Tag> from the Compound Tag. If no tag is found with the given name, and
      * empty List will be returned.
      * 
-     * @param name: The name of the ListTag tag.
-     * @return List<Tag>: The stored ListTag.
+     * @param name The name of the ListTag tag.
+     * @return List<Tag> The stored ListTag.
      */
     
     public List<Tag> getTagList (String name) {
@@ -317,8 +317,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a CompoundTag to the CompoundTag.
      * 
-     * @param name: The name to store the CompoundTag under.
-     * @param value: The CompoundTag to store.
+     * @param name The name to store the CompoundTag under.
+     * @param value The CompoundTag to store.
      */
     public void setCompoundTag (String name, CompoundTag value) {
         
@@ -329,8 +329,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a CompoundTag from the CompoundTag. If no CompoundTag is found with the given name,
      * null will be returned.
      * 
-     * @param name: The name of the CompoundTag tag.
-     * @return CompoundTag: The stored CompoundTag.
+     * @param name The name of the CompoundTag tag.
+     * @return CompoundTag The stored CompoundTag.
      */
     public CompoundTag getCompoundTag (String name) {
         
@@ -340,8 +340,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets an int array to the CompoundTag.
      * 
-     * @param name: The name to store the int array under.
-     * @param value: The int array to store.
+     * @param name The name to store the int array under.
+     * @param value The int array to store.
      */
     public void setIntArray (String name, int[] value) {
         
@@ -352,8 +352,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets an int array from the CompoundTag. If no Tag is found with the given name, an empty
      * array will be returned.
      * 
-     * @param name: The name of the int array tag.
-     * @return int[]: The stored int array.
+     * @param name The name of the int array tag.
+     * @return int[] The stored int array.
      */
     public int[] getInArray (String name) {
         
@@ -363,8 +363,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a double array to the CompoundTag.
      * 
-     * @param name: The name to store the double array under.
-     * @param value: The double array to store.
+     * @param name The name to store the double array under.
+     * @param value The double array to store.
      */
     public void setDoubleArray (String name, double[] value) {
         
@@ -375,8 +375,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a double array from the CompoundTag. If no Tag is found with the given name, an
      * empty array will be returned.
      * 
-     * @param name: The name of the double array tag.
-     * @return double[]: The stored double array.
+     * @param name The name of the double array tag.
+     * @return double[] The stored double array.
      */
     public double[] getDoubleArray (String name) {
         
@@ -386,8 +386,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a float array to the CompoundTag.
      * 
-     * @param name: The name to store the float array under.
-     * @param value: The float array to store.
+     * @param name The name to store the float array under.
+     * @param value The float array to store.
      */
     public void setFloatArray (String name, float[] value) {
         
@@ -398,8 +398,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a float array from the CompoundTag. If no Tag is found with the given name, an
      * empty array will be returned.
      * 
-     * @param name: The name of the float array tag.
-     * @return float[]: The stored float array.
+     * @param name The name of the float array tag.
+     * @return float[] The stored float array.
      */
     public float[] getFloatArray (String name) {
         
@@ -409,8 +409,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a long array to the CompoundTag.
      * 
-     * @param name: The name to store the long array under.
-     * @param value: The double long to store.
+     * @param name The name to store the long array under.
+     * @param value The double long to store.
      */
     public void setLongArray (String name, long[] value) {
         
@@ -421,8 +421,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a long array from the CompoundTag. If no Tag is found with the given name, an empty
      * array will be returned.
      * 
-     * @param name: The name of the long array tag.
-     * @return long[]: The stored long array.
+     * @param name The name of the long array tag.
+     * @return long[] The stored long array.
      */
     public long[] getLongArray (String name) {
         
@@ -432,8 +432,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a serializable array to the CompoundTag.
      * 
-     * @param name: The name to store the serializable array under.
-     * @param value: The serializable array to store.
+     * @param name The name to store the serializable array under.
+     * @param value The serializable array to store.
      */
     public void setSerializableArray (String name, Serializable[] value) {
         
@@ -444,8 +444,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a serializable array from the CompoundTag. If no Tag is found with the given name,
      * an empty array will be returned.
      * 
-     * @param name: The name of the serializable array tag.
-     * @return Serializable[]: The stored serializable array.
+     * @param name The name of the serializable array tag.
+     * @return Serializable[] The stored serializable array.
      */
     public Serializable[] getSerializableArray (String name) {
         
@@ -455,8 +455,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a serializable object to the CompoundTag.
      * 
-     * @param name: The name to store the serializable object under.
-     * @param value: The serializable object to store.
+     * @param name The name to store the serializable object under.
+     * @param value The serializable object to store.
      */
     public void setSerializableTag (String name, Serializable value) {
         
@@ -467,8 +467,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a serializable object from the CompoundTag. If no Tag is found with the given name,
      * an empty array will be returned.
      * 
-     * @param name: The name of the serializable object tag.
-     * @return Serializable: The stored serializable object.
+     * @param name The name of the serializable object tag.
+     * @return Serializable The stored serializable object.
      */
     public Serializable getSerializable (String name) {
         
@@ -478,8 +478,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a short array to the CompoundTag.
      * 
-     * @param name: The name to store the short array under.
-     * @param value: The short array to store.
+     * @param name The name to store the short array under.
+     * @param value The short array to store.
      */
     public void setShortArray (String name, short[] value) {
         
@@ -490,8 +490,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a short array from the CompoundTag. If no Tag is found with the given name, an
      * empty array will be returned.
      * 
-     * @param name: The name of the short array tag.
-     * @return short[]: The stored short array.
+     * @param name The name of the short array tag.
+     * @return short[] The stored short array.
      */
     public short[] getShortArray (String name) {
         
@@ -501,8 +501,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Sets a string array to the CompoundTag.
      * 
-     * @param name: The name to store the string array under.
-     * @param value: The string array to store.
+     * @param name The name to store the string array under.
+     * @param value The string array to store.
      */
     public void setStringArray (String name, String[] value) {
         
@@ -513,8 +513,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Gets a string array from the CompoundTag. If no Tag is found with the given name, an
      * empty array will be returned.
      * 
-     * @param name: The name of the string array tag.
-     * @return string[]: The stored string array.
+     * @param name The name of the string array tag.
+     * @return string[] The stored string array.
      */
     public String[] getStringArray (String name) {
         
@@ -524,8 +524,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Removes a tag from this compound tag.
      *
-     * @param tagName: Name of the tag to remove.
-     * @return Tag: The removed tag.
+     * @param tagName Name of the tag to remove.
+     * @return Tag The removed tag.
      */
     public <T extends Tag> T removeTag (String tagName) {
         
@@ -535,7 +535,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Gets a set of keys in this compound tag.
      *
-     * @return Set<String>: The compound tag's key set.
+     * @return Set<String> The compound tag's key set.
      */
     public Set<String> keySet () {
         
@@ -545,7 +545,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Gets a collection of tags in this compound tag.
      *
-     * @return Collection<Tag>: This compound tag's tags.
+     * @return Collection<Tag> This compound tag's tags.
      */
     public Collection<Tag> values () {
         
@@ -555,7 +555,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     /**
      * Gets the number of tags in this compound tag.
      *
-     * @return int: This compound tag's size.
+     * @return int This compound tag's size.
      */
     public int size () {
         

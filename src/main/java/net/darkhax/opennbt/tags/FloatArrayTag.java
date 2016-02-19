@@ -17,7 +17,7 @@ public class FloatArrayTag extends Tag {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public FloatArrayTag(String name) {
         
@@ -27,8 +27,8 @@ public class FloatArrayTag extends Tag {
     /**
      * Creates a tag with the specified name and value.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
+     * @param name The name of the tag.
+     * @param value The value of the tag.
      */
     public FloatArrayTag(String name, float[] value) {
         
@@ -45,7 +45,7 @@ public class FloatArrayTag extends Tag {
     /**
      * Sets the value of this tag.
      *
-     * @param value: New value of this tag.
+     * @param value New value of this tag.
      */
     public void setValue (float[] value) {
         
@@ -58,8 +58,8 @@ public class FloatArrayTag extends Tag {
     /**
      * Gets a value in this tag's array.
      *
-     * @param index: Index of the value.
-     * @return float: The value at the given index.
+     * @param index Index of the value.
+     * @return float The value at the given index.
      */
     public float getValue (int index) {
         
@@ -69,8 +69,8 @@ public class FloatArrayTag extends Tag {
     /**
      * Sets a value in this tag's array.
      *
-     * @param index: Index of the value.
-     * @param value: Value to set.
+     * @param index Index of the value.
+     * @param value Value to set.
      */
     public void setValue (int index, float value) {
         
@@ -80,7 +80,7 @@ public class FloatArrayTag extends Tag {
     /**
      * Gets the length of this tag's array.
      *
-     * @return int: This tag's array length.
+     * @return int This tag's array length.
      */
     public int length () {
         

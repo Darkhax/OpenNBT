@@ -25,7 +25,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     private ListTag(String name) {
         super(name);
@@ -34,8 +34,8 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Creates a tag with the specified name and tag type.
      *
-     * @param name: The name of the tag.
-     * @param type: Tag type of the list.
+     * @param name The name of the tag.
+     * @param type Tag type of the list.
      */
     public ListTag(String name, Class<? extends Tag> type) {
         
@@ -47,9 +47,9 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Creates a tag with the specified name and List of tags.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
-     * @throws IllegalArgumentException: Thrown when all tags in the list are not the same, or
+     * @param name The name of the tag.
+     * @param value The value of the tag.
+     * @throws IllegalArgumentException Thrown when all tags in the list are not the same, or
      *             invalid.
      */
     public ListTag(String name, List<Tag> value) throws IllegalArgumentException {
@@ -83,7 +83,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Sets the value of this tag.
      *
-     * @param value: New value of this tag.
+     * @param value New value of this tag.
      */
     public void setValue (List<Tag> value) {
         
@@ -97,7 +97,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Gets the element type of the ListTag.
      *
-     * @return Class<? extends Tag>: The ListTag's element type.
+     * @return Class<? extends Tag> The ListTag's element type.
      */
     public Class<? extends Tag> getElementType () {
         
@@ -107,8 +107,8 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Adds a tag to this list tag.
      *
-     * @param tag: Tag to add.
-     * @return boolean: If the list was changed as a result.
+     * @param tag Tag to add.
+     * @return boolean If the list was changed as a result.
      */
     public boolean add (Tag tag) {
         
@@ -121,8 +121,8 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Removes a tag from this list tag.
      *
-     * @param tag: Tag to remove.
-     * @return boolean: If the list contained the tag.
+     * @param tag Tag to remove.
+     * @return boolean If the list contained the tag.
      */
     public boolean remove (Tag tag) {
         
@@ -132,8 +132,8 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Gets the tag at the given index of this list tag.
      *
-     * @param index: Index of the tag.
-     * @return Tag: The tag at the given index.
+     * @param index Index of the tag.
+     * @return Tag The tag at the given index.
      */
     @SuppressWarnings("unchecked")
     public <T extends Tag> T get (int index) {
@@ -144,7 +144,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
     /**
      * Gets the number of tags in this list tag.
      *
-     * @return int: The size of this list tag.
+     * @return int The size of this list tag.
      */
     public int size () {
         
@@ -165,7 +165,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
         this.value = new ArrayList<Tag>();
         
         if (id != 0 && this.type == null)
-            throw new IOException("Unknown tag ID in ListTag: " + id);
+            throw new IOException("Unknown tag ID in ListTag " + id);
             
         int count = in.readInt();
         

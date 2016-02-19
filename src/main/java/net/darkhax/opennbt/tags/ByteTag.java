@@ -17,7 +17,7 @@ public class ByteTag extends Tag {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public ByteTag(String name) {
         
@@ -27,8 +27,8 @@ public class ByteTag extends Tag {
     /**
      * Creates a tag with the specified name and value.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
+     * @param name The name of the tag.
+     * @param value The value of the tag.
      */
     public ByteTag(String name, byte value) {
         
@@ -45,7 +45,7 @@ public class ByteTag extends Tag {
     /**
      * Sets the value of this tag.
      *
-     * @param value: New value of this tag.
+     * @param value New value of this tag.
      */
     public void setValue (byte value) {
         

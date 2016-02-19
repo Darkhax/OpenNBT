@@ -17,7 +17,7 @@ public class TagCreateException extends Exception {
     /**
      * Constructs a new TagCreateException with a special message.
      * 
-     * @param message: A special message for the exception.
+     * @param message A special message for the exception.
      */
     public TagCreateException(String message) {
         
@@ -27,7 +27,7 @@ public class TagCreateException extends Exception {
     /**
      * Constructs a new TagCreateException using a Throwable as a cause.
      * 
-     * @param cause: The cause of the exception.
+     * @param cause The cause of the exception.
      */
     public TagCreateException(Throwable cause) {
         
@@ -37,8 +37,8 @@ public class TagCreateException extends Exception {
     /**
      * Constructs a new TagCreateException using a Throwable cause and a special message.
      * 
-     * @param message: A special message for the exception.
-     * @param cause: The cause of the exception.
+     * @param message A special message for the exception.
+     * @param cause The cause of the exception.
      */
     public TagCreateException(String message, Throwable cause) {
         

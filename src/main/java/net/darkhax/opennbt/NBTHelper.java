@@ -31,8 +31,8 @@ public class NBTHelper {
     /**
      * Reads the root CompoundTag from the given file.
      *
-     * @param path: Path of the file.
-     * @return CompoundTag: The read compound tag.
+     * @param path Path of the file.
+     * @return CompoundTag The read compound tag.
      */
     public static CompoundTag readFile (String path) {
         
@@ -42,8 +42,8 @@ public class NBTHelper {
     /**
      * Reads the root CompoundTag from the given file.
      *
-     * @param file File: to read from.
-     * @return CompoundTag: The read compound tag.
+     * @param file File to read from.
+     * @return CompoundTag The read compound tag.
      */
     public static CompoundTag readFile (File file) {
         
@@ -53,9 +53,9 @@ public class NBTHelper {
     /**
      * Reads the root CompoundTag from the given file.
      *
-     * @param path: Path of the file.
-     * @param compressed: Whether the NBT file is compressed.
-     * @return CompoundTag: The read compound tag.
+     * @param path Path of the file.
+     * @param compressed Whether the NBT file is compressed.
+     * @return CompoundTag The read compound tag.
      */
     public static CompoundTag readFile (String path, boolean compressed) {
         
@@ -65,9 +65,9 @@ public class NBTHelper {
     /**
      * Reads the root CompoundTag from the given file.
      *
-     * @param file: File to read from.
-     * @param compressed: Whether the NBT file is compressed.
-     * @return CompoundTag: The read compound tag.
+     * @param file File to read from.
+     * @param compressed Whether the NBT file is compressed.
+     * @return CompoundTag The read compound tag.
      */
     public static CompoundTag readFile (File file, boolean compressed) {
         
@@ -97,8 +97,8 @@ public class NBTHelper {
     /**
      * Writes the given root CompoundTag to the given file.
      *
-     * @param tag: Tag to write.
-     * @param path: Path to write to.
+     * @param tag Tag to write.
+     * @param path Path to write to.
      */
     public static void writeFile (CompoundTag tag, String path) {
         
@@ -108,8 +108,8 @@ public class NBTHelper {
     /**
      * Writes the given root CompoundTag to the given file.
      *
-     * @param tag: Tag to write.
-     * @param file: File to write to.
+     * @param tag Tag to write.
+     * @param file File to write to.
      */
     public static void writeFile (CompoundTag tag, File file) {
         
@@ -131,9 +131,9 @@ public class NBTHelper {
     /**
      * Writes the given root CompoundTag to the given file.
      *
-     * @param tag: Tag to write.
-     * @param file: File to write to.
-     * @param compressed: Whether the NBT file should be compressed.
+     * @param tag Tag to write.
+     * @param file File to write to.
+     * @param compressed Whether the NBT file should be compressed.
      */
     public static void writeFile (CompoundTag tag, File file, boolean compressed) {
         
@@ -165,9 +165,9 @@ public class NBTHelper {
     /**
      * Reads an NBT tag from a DataInputStream.
      *
-     * @param in: Input stream to read from.
-     * @return Tag: The read tag, or null if the tag is an end tag.
-     * @throws IOException: If an I/O error occurs.
+     * @param in Input stream to read from.
+     * @return Tag The read tag, or null if the tag is an end tag.
+     * @throws IOException If an I/O error occurs.
      */
     public static Tag readTag (DataInputStream in) throws IOException {
         
@@ -196,9 +196,9 @@ public class NBTHelper {
     /**
      * Writes a tag to an output stream.
      *
-     * @param out: Output stream to write to.
-     * @param tag: Tag to write.
-     * @throws IOException: If an I/O error occurs.
+     * @param out Output stream to write to.
+     * @param tag Tag to write.
+     * @throws IOException If an I/O error occurs.
      */
     public static void writeTag (DataOutputStream out, Tag tag) throws IOException {
         

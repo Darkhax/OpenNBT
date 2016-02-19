@@ -17,7 +17,7 @@ public class ByteArrayTag extends Tag {
     /**
      * Creates a tag with the specified name.
      *
-     * @param name: The name of the tag.
+     * @param name The name of the tag.
      */
     public ByteArrayTag(String name) {
         
@@ -27,8 +27,8 @@ public class ByteArrayTag extends Tag {
     /**
      * Creates a tag with the specified name and values.
      *
-     * @param name: The name of the tag.
-     * @param value: The value of the tag.
+     * @param name The name of the tag.
+     * @param value The value of the tag.
      */
     public ByteArrayTag(String name, byte[] value) {
         super(name);
@@ -44,7 +44,7 @@ public class ByteArrayTag extends Tag {
     /**
      * Sets the value of this tag.
      *
-     * @param value: New value of this tag.
+     * @param value New value of this tag.
      */
     public void setValue (byte[] value) {
         
@@ -57,8 +57,8 @@ public class ByteArrayTag extends Tag {
     /**
      * Gets a value in this tag's array.
      *
-     * @param index: Index of the value.
-     * @return byte: The value at the given index.
+     * @param index Index of the value.
+     * @return byte The value at the given index.
      */
     public byte getValue (int index) {
         
@@ -68,8 +68,8 @@ public class ByteArrayTag extends Tag {
     /**
      * Sets a value in this tag's array.
      *
-     * @param index: Index of the value.
-     * @param value: Value to set.
+     * @param index Index of the value.
+     * @param value Value to set.
      */
     public void setValue (int index, byte value) {
         
@@ -79,7 +79,7 @@ public class ByteArrayTag extends Tag {
     /**
      * Gets the length of this tag's array.
      *
-     * @return int: This tag's array length.
+     * @return int This tag's array length.
      */
     public int length () {
         
