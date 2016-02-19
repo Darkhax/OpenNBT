@@ -9,7 +9,8 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'maven'
 
-group 'JNBT'
+group 'OpenNBT'
+archivesBaseName ="OpenNBT"
 version = getVersionFromJava(file("src/main/java/net/darkhax/opennbt/NBTHelper.java"))
 
 String getVersionFromJava(File file) {
