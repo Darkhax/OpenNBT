@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import net.darkhax.opennbt.NBTIO;
+import net.darkhax.opennbt.NBTHelper;
 
 /**
  * A compound tag which contains a bunch of other tags.
@@ -496,7 +496,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
             
             Tag tag;
             
-            while ((tag = NBTIO.readTag(in)) != null)
+            while ((tag = NBTHelper.readTag(in)) != null)
                 tags.add(tag);
         }
         catch (EOFException e) {
@@ -511,7 +511,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     public void write (DataOutputStream out) throws IOException {
         
         for (Tag tag : this.value.values())
-            NBTIO.writeTag(out, tag);
+            NBTHelper.writeTag(out, tag);
             
         out.writeByte(0);
     }
