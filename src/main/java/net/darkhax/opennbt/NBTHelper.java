@@ -19,7 +19,7 @@ import net.darkhax.opennbt.tags.TagRegistry;
 /**
  * A class containing methods for reading/writing NBT tags.
  */
-public class NBTIO {
+public class NBTHelper {
     
     /**
      * Reads the root CompoundTag from the given file.

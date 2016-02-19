@@ -2,7 +2,7 @@ package net.darkhax.nbttest;
 
 import java.util.Arrays;
 
-import net.darkhax.opennbt.NBTIO;
+import net.darkhax.opennbt.NBTHelper;
 import net.darkhax.opennbt.tags.CompoundTag;
 
 public class OpenNBTTest {
@@ -16,10 +16,10 @@ public class OpenNBTTest {
         tag.setIntArray("TestIntegerArray", new int[] { 200, 200, 208, 208, 203, 205, 203, 205, 48, 30 });
         
         // Writes the tag to a new file called NBTExample.nbt
-        NBTIO.writeFile(tag, "NBTExample.nbt");
+        NBTHelper.writeFile(tag, "NBTExample.nbt");
         
         // Reads the NBT data from the NBTExample.nbt file.
-        tag = NBTIO.readFile("NBTExample.nbt");
+        tag = NBTHelper.readFile("NBTExample.nbt");
         
         // Prints the result of the tag's toString method to see if the data was written and
         // read properly.
