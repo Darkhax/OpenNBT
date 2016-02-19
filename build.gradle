@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+group 'JNBT'
+version = getVersionFromJava(file("src/main/java/net/darkhax/opennbt/NBTHelper.java"))
+
+String getVersionFromJava(File file) {
+
+    String major = "0";
+    String minor = "0";
+	
+    String build = System.getenv("BUILD_NUMBER") ?: "0";
+    def outfile = "";
+    def ln = System.getProperty("line.separator")
+
+    String prefix = "public static final String version = \"";
+    file.eachLine { String s ->
+
+        String v = s.trim();
+        if (v.startsWith(prefix)) {
+            v = v.substring(prefix.length(), v.length() - 2);
+            String[] pts = v.split("\\.");
+
+            major = pts[0];
+            minor = pts[1];
+            s = s.replaceAll(".0\";", ".${build}\";");
+        }
+        outfile += (s + ln);
+    }
+
+    file.write(outfile);
+
+    return "$major.$minor.$build";
+}

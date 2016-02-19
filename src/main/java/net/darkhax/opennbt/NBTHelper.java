@@ -17,9 +17,16 @@ import net.darkhax.opennbt.tags.TagCreateException;
 import net.darkhax.opennbt.tags.TagRegistry;
 
 /**
- * A class containing methods for reading/writing NBT tags.
+ * A class containing various helpers and utilities. 
  */
 public class NBTHelper {
+    
+    /**
+     * The current version of the library. Follows a Major-Minor-Build structure. A minor
+     * update will only take place when there is a change which potentially breaks
+     * functionality.
+     */
+    public static final String version = "2.1.0";
     
     /**
      * Reads the root CompoundTag from the given file.
