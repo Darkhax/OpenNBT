@@ -248,11 +248,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * Sets a byte array to the Compound Tag.
      * 
      * @param name: The name to store the byte array under.
-     * @param array: The byte array to store.
+     * @param value: The byte array to store.
      */
-    public void setByteArray (String name, byte[] array) {
+    public void setByteArray (String name, byte[] value) {
         
-        this.value.put(name, new ByteArrayTag(name, array));
+        this.value.put(name, new ByteArrayTag(name, value));
     }
     
     /**
@@ -395,10 +395,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a float array to the CompoundTag.
+     * Gets a float array from the CompoundTag. If no Tag is found with the given name, an
+     * empty array will be returned.
      * 
-     * @param name: The name to store the float array under.
-     * @param value: The float array to store.
+     * @param name: The name of the float array tag.
+     * @return float[]: The stored float array.
      */
     public float[] getFloatArray (String name) {
         
@@ -417,10 +418,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a long array to the CompoundTag.
+     * Gets a long array from the CompoundTag. If no Tag is found with the given name, an empty
+     * array will be returned.
      * 
-     * @param name: The name to store the long array under.
-     * @param value: The long array to store.
+     * @param name: The name of the long array tag.
+     * @return long[]: The stored long array.
      */
     public long[] getLongArray (String name) {
         
@@ -439,10 +441,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a serializable array to the CompoundTag.
+     * Gets a serializable array from the CompoundTag. If no Tag is found with the given name,
+     * an empty array will be returned.
      * 
-     * @param name: The name to store the serializable array under.
-     * @param value: The serializable array to store.
+     * @param name: The name of the serializable array tag.
+     * @return Serializable[]: The stored serializable array.
      */
     public Serializable[] getSerializableArray (String name) {
         
@@ -461,10 +464,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a serializable object to the CompoundTag.
+     * Gets a serializable object from the CompoundTag. If no Tag is found with the given name,
+     * an empty array will be returned.
      * 
-     * @param name: The name to store the serializable object under.
-     * @param value: The serializable object to store.
+     * @param name: The name of the serializable object tag.
+     * @return Serializable: The stored serializable object.
      */
     public Serializable getSerializable (String name) {
         
@@ -483,10 +487,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a short array to the CompoundTag.
+     * Gets a short array from the CompoundTag. If no Tag is found with the given name, an
+     * empty array will be returned.
      * 
-     * @param name: The name to store the short array under.
-     * @param value: The short array to store.
+     * @param name: The name of the short array tag.
+     * @return short[]: The stored short array.
      */
     public short[] getShortArray (String name) {
         
@@ -505,10 +510,11 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a string array to the CompoundTag.
+     * Gets a string array from the CompoundTag. If no Tag is found with the given name, an
+     * empty array will be returned.
      * 
-     * @param name: The name to store the string array under.
-     * @param value: The string array to store.
+     * @param name: The name of the string array tag.
+     * @return string[]: The stored string array.
      */
     public String[] getStringArray (String name) {
         

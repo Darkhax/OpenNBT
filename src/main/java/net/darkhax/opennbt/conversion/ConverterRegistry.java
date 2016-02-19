@@ -93,7 +93,7 @@ public class ConverterRegistry {
      *
      * @param tag: Tag to convert.
      * @return V: The converted value.
-     * @throw ConversionException: If a suitable converter could not be found.
+     * @throws ConversionException: If a suitable converter could not be found.
      */
     @SuppressWarnings("unchecked")
     public static <T extends Tag, V> V convertToValue (T tag) throws ConversionException {
@@ -114,7 +114,7 @@ public class ConverterRegistry {
      * @param name: Name of the resulting tag.
      * @param value: Value to convert.
      * @return Tag: The converted tag.
-     * @throw ConversionException: If a suitable converter could not be found.
+     * @throws ConversionException: If a suitable converter could not be found.
      */
     @SuppressWarnings("unchecked")
     public static <V, T extends Tag> T convertToTag (String name, V value) throws ConversionException {
