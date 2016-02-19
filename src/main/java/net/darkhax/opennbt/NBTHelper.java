@@ -17,7 +17,7 @@ import net.darkhax.opennbt.tags.TagCreateException;
 import net.darkhax.opennbt.tags.TagRegistry;
 
 /**
- * A class containing various helpers and utilities. 
+ * A class containing various helpers and utilities.
  */
 public class NBTHelper {
     
