@@ -19,7 +19,7 @@ OpenNBT is very easy to start using. The below is an example of how to read and 
   tag.setString("TestString", "Hello World!");
   tag.setIntArray("TestIntegerArray", new int[] { 200, 200, 208, 208, 203, 205, 203, 205, 48, 30 });
   
-  // Writes the tag to a new file called NBTExample.nbt
+  // Writes the tag to a new file called NBTExample.nbt. Any extension can be used. 
   NBTHelper.writeFile(tag, "NBTExample.nbt");
   
   // Reads the NBT data from the NBTExample.nbt file.
