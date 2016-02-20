@@ -5,7 +5,7 @@ A Java library for the NBT file format.
 The latest source code can be found here on [GitHub](https://github.com/darkhax/OpenNBT). If you are using Git, you can use the following command to clone the project: `git clone git:github.com/darkhax/OpenNBT.git`
 
 ##Building from Source
-This project can be built using the Gradle Wrapper included in the project. When the `gradlew build` command is executed, a compiled JAR will be created in `~/build/libs`. Sources and Javadocs will also be generated in the same directory. Alternatively the latest builds of OpenNBT along with Sources and Javadocs can be found [here]()
+This project can be built using the Gradle Wrapper included in the project. When the `gradlew build` command is executed, a compiled JAR will be created in `~/build/libs`. Sources and Javadocs will also be generated in the same directory. Alternatively the latest builds of OpenNBT along with Sources and Javadocs can be found [here](http://maven.rubbix.net/net/darkhax/opennbt/OpenNBT)
 
 ##Contributing
 This project is open to contributions from other members of the community. If you would like to contribute towards this project you can open an issue, or create a new pull request. If you create a new pull request, please be sure to read the project [guideleines and coding standards]().
