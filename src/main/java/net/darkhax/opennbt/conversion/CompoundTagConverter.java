@@ -14,16 +14,13 @@ public class CompoundTagConverter implements TagConverter<CompoundTag, Map> {
     @Override
     public Map convert (CompoundTag tag) {
         
-        Map<String, Object> ret = new HashMap<String, Object>();
+        Map<String, Object> converted = new HashMap<String, Object>();
         Map<String, Tag> tags = tag.getValue();
         
-        for (String name : tags.keySet()) {
+        for (Tag t : tags.values())
+            converted.put(t.getName(), ConverterRegistry.convertToValue(t));
             
-            Tag t = tags.get(name);
-            ret.put(t.getName(), ConverterRegistry.convertToValue(t));
-        }
-        
-        return ret;
+        return converted;
     }
     
     @Override
