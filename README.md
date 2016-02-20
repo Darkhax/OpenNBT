@@ -26,6 +26,37 @@ OpenNBT is very easy to start using. The below is an example of how to read and 
   tag = NBTHelper.readFile("NBTExample.nbt");
 ```
 
+##Dependency Management
+If you are using [Maven](https://maven.apache.org/download.cgi) to manage your dependencies. Add the following into your `pom.xml` file. Make sure to update the version from time to time. 
+```
+<repositories>
+    <repository>
+        <id>Rubbix.net</id>
+        <url>http://maven.rubbix.net</url>
+    </repository>
+</repositories>
+
+<dependency>
+     <groupId>net.darkhax.opennbt</groupId>
+     <artifactId>OpenNBT</artifactId>
+     <version>2.1.14</version>
+</dependency>
+```
+
+If you are using [Gradle](https://gradle.org) to manage your dependencies, add the following into your `build.gradle` file. Make sure to update the version from time to time.
+```
+repositories {
+
+    mavenCentral()
+    maven { url 'http://maven.rubbix.net' }
+}
+
+dependencies {
+
+    compile "net.darkhax.opennbt:OpenNBT:2.1.10"
+}
+```
+
 ##Legal Information
 OpenNBT is licensed under the [MIT license](https://opensource.org/licenses/mit-license.html). Please see the `LICENSE.txt` for more details. 
 
