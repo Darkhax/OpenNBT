@@ -334,7 +334,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public CompoundTag getCompoundTag (String name) {
         
-        return (this.value.containsKey(name)) ? (CompoundTag) this.value.get(name).getValue() : null;
+        return (this.value.containsKey(name)) ? (CompoundTag) this.value.get(name) : null;
     }
     
     /**
