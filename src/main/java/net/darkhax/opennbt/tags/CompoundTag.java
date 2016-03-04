@@ -107,17 +107,6 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a byte to the Compound Tag.
-     * 
-     * @param name The name to store the byte under.
-     * @param value The byte value to store.
-     */
-    public void setByte (String name, byte value) {
-        
-        this.value.put(name, new ByteTag(name, value));
-    }
-    
-    /**
      * Gets a byte from the Compound Tag. If no tag is found with the given name, 0 will be
      * returned.
      * 
@@ -130,14 +119,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a short to the Compound Tag.
+     * Sets a byte to the Compound Tag.
      * 
-     * @param name The name to store the short under.
-     * @param value The short value to store.
+     * @param name The name to store the byte under.
+     * @param value The byte value to store.
      */
-    public void setShort (String name, short value) {
+    public void setByte (String name, byte value) {
         
-        this.value.put(name, new ShortTag(name, value));
+        this.value.put(name, new ByteTag(name, value));
     }
     
     /**
@@ -153,14 +142,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets an int to the Compound Tag.
+     * Sets a short to the Compound Tag.
      * 
-     * @param name The name to store the int under.
-     * @param value The int value to store.
+     * @param name The name to store the short under.
+     * @param value The short value to store.
      */
-    public void setInt (String name, int value) {
+    public void setShort (String name, short value) {
         
-        this.value.put(name, new IntTag(name, value));
+        this.value.put(name, new ShortTag(name, value));
     }
     
     /**
@@ -176,14 +165,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a long to the Compound Tag.
+     * Sets an int to the Compound Tag.
      * 
-     * @param name The name to store the long under.
-     * @param value The long to store.
+     * @param name The name to store the int under.
+     * @param value The int value to store.
      */
-    public void setLong (String name, long value) {
+    public void setInt (String name, int value) {
         
-        this.value.put(name, new LongTag(name, value));
+        this.value.put(name, new IntTag(name, value));
     }
     
     /**
@@ -199,14 +188,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a float to the Compound Tag.
+     * Sets a long to the Compound Tag.
      * 
-     * @param name The name to store the float under.
-     * @param value The float value to store.
+     * @param name The name to store the long under.
+     * @param value The long to store.
      */
-    public void setFloat (String name, float value) {
+    public void setLong (String name, long value) {
         
-        this.value.put(name, new FloatTag(name, value));
+        this.value.put(name, new LongTag(name, value));
     }
     
     /**
@@ -222,14 +211,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a double to the Compound Tag.
+     * Sets a float to the Compound Tag.
      * 
-     * @param name The name to store the double under.
-     * @param value The double value to store.
+     * @param name The name to store the float under.
+     * @param value The float value to store.
      */
-    public void setDouble (String name, double value) {
+    public void setFloat (String name, float value) {
         
-        this.value.put(name, new DoubleTag(name, value));
+        this.value.put(name, new FloatTag(name, value));
     }
     
     /**
@@ -245,14 +234,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a byte array to the Compound Tag.
+     * Sets a double to the Compound Tag.
      * 
-     * @param name The name to store the byte array under.
-     * @param value The byte array to store.
+     * @param name The name to store the double under.
+     * @param value The double value to store.
      */
-    public void setByteArray (String name, byte[] value) {
+    public void setDouble (String name, double value) {
         
-        this.value.put(name, new ByteArrayTag(name, value));
+        this.value.put(name, new DoubleTag(name, value));
     }
     
     /**
@@ -268,14 +257,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a String to the Compound Tag.
+     * Sets a byte array to the Compound Tag.
      * 
-     * @param name The name to store the String under.
-     * @param value The String to store.
+     * @param name The name to store the byte array under.
+     * @param value The byte array to store.
      */
-    public void setString (String name, String value) {
+    public void setByteArray (String name, byte[] value) {
         
-        this.value.put(name, new StringTag(name, value));
+        this.value.put(name, new ByteArrayTag(name, value));
     }
     
     /**
@@ -291,14 +280,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a List<Tag> to the Compound Tag.
+     * Sets a String to the Compound Tag.
      * 
-     * @param name The name to store the List<Tag> under.
-     * @param value The Tag List to store.
+     * @param name The name to store the String under.
+     * @param value The String to store.
      */
-    public void setTagList (String name, List<Tag> value) {
+    public void setString (String name, String value) {
         
-        this.value.put(name, new ListTag(name, value));
+        this.value.put(name, new StringTag(name, value));
     }
     
     /**
@@ -315,14 +304,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a CompoundTag to the CompoundTag.
+     * Sets a List<Tag> to the Compound Tag.
      * 
-     * @param name The name to store the CompoundTag under.
-     * @param value The CompoundTag to store.
+     * @param name The name to store the List<Tag> under.
+     * @param value The Tag List to store.
      */
-    public void setCompoundTag (String name, CompoundTag value) {
+    public void setTagList (String name, List<Tag> value) {
         
-        this.value.put(name, value);
+        this.value.put(name, new ListTag(name, value));
     }
     
     /**
@@ -338,14 +327,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets an int array to the CompoundTag.
+     * Sets a CompoundTag to the CompoundTag.
      * 
-     * @param name The name to store the int array under.
-     * @param value The int array to store.
+     * @param name The name to store the CompoundTag under.
+     * @param value The CompoundTag to store.
      */
-    public void setIntArray (String name, int[] value) {
+    public void setCompoundTag (String name, CompoundTag value) {
         
-        this.value.put(name, new IntArrayTag(name, value));
+        this.value.put(name, value);
     }
     
     /**
@@ -361,14 +350,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a double array to the CompoundTag.
+     * Sets an int array to the CompoundTag.
      * 
-     * @param name The name to store the double array under.
-     * @param value The double array to store.
+     * @param name The name to store the int array under.
+     * @param value The int array to store.
      */
-    public void setDoubleArray (String name, double[] value) {
+    public void setIntArray (String name, int[] value) {
         
-        this.value.put(name, new DoubleArrayTag(name, value));
+        this.value.put(name, new IntArrayTag(name, value));
     }
     
     /**
@@ -384,14 +373,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a float array to the CompoundTag.
+     * Sets a double array to the CompoundTag.
      * 
-     * @param name The name to store the float array under.
-     * @param value The float array to store.
+     * @param name The name to store the double array under.
+     * @param value The double array to store.
      */
-    public void setFloatArray (String name, float[] value) {
+    public void setDoubleArray (String name, double[] value) {
         
-        this.value.put(name, new FloatArrayTag(name, value));
+        this.value.put(name, new DoubleArrayTag(name, value));
     }
     
     /**
@@ -407,14 +396,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a long array to the CompoundTag.
+     * Sets a float array to the CompoundTag.
      * 
-     * @param name The name to store the long array under.
-     * @param value The double long to store.
+     * @param name The name to store the float array under.
+     * @param value The float array to store.
      */
-    public void setLongArray (String name, long[] value) {
+    public void setFloatArray (String name, float[] value) {
         
-        this.value.put(name, new LongArrayTag(name, value));
+        this.value.put(name, new FloatArrayTag(name, value));
     }
     
     /**
@@ -430,14 +419,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a serializable array to the CompoundTag.
+     * Sets a long array to the CompoundTag.
      * 
-     * @param name The name to store the serializable array under.
-     * @param value The serializable array to store.
+     * @param name The name to store the long array under.
+     * @param value The double long to store.
      */
-    public void setSerializableArray (String name, Serializable[] value) {
+    public void setLongArray (String name, long[] value) {
         
-        this.value.put(name, new SerializableArrayTag(name, value));
+        this.value.put(name, new LongArrayTag(name, value));
     }
     
     /**
@@ -453,14 +442,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a serializable object to the CompoundTag.
+     * Sets a serializable array to the CompoundTag.
      * 
-     * @param name The name to store the serializable object under.
-     * @param value The serializable object to store.
+     * @param name The name to store the serializable array under.
+     * @param value The serializable array to store.
      */
-    public void setSerializableTag (String name, Serializable value) {
+    public void setSerializableArray (String name, Serializable[] value) {
         
-        this.value.put(name, new SerializableTag(name, value));
+        this.value.put(name, new SerializableArrayTag(name, value));
     }
     
     /**
@@ -476,14 +465,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a short array to the CompoundTag.
+     * Sets a serializable object to the CompoundTag.
      * 
-     * @param name The name to store the short array under.
-     * @param value The short array to store.
+     * @param name The name to store the serializable object under.
+     * @param value The serializable object to store.
      */
-    public void setShortArray (String name, short[] value) {
+    public void setSerializableTag (String name, Serializable value) {
         
-        this.value.put(name, new ShortArrayTag(name, value));
+        this.value.put(name, new SerializableTag(name, value));
     }
     
     /**
@@ -499,14 +488,14 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a string array to the CompoundTag.
+     * Sets a short array to the CompoundTag.
      * 
-     * @param name The name to store the string array under.
-     * @param value The string array to store.
+     * @param name The name to store the short array under.
+     * @param value The short array to store.
      */
-    public void setStringArray (String name, String[] value) {
+    public void setShortArray (String name, short[] value) {
         
-        this.value.put(name, new StringArrayTag(name, value));
+        this.value.put(name, new ShortArrayTag(name, value));
     }
     
     /**
@@ -519,6 +508,17 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     public String[] getStringArray (String name) {
         
         return (this.value.containsKey(name)) ? (String[]) this.value.get(name).getValue() : new String[0];
+    }
+    
+    /**
+     * Sets a string array to the CompoundTag.
+     * 
+     * @param name The name to store the string array under.
+     * @param value The string array to store.
+     */
+    public void setStringArray (String name, String[] value) {
+        
+        this.value.put(name, new StringArrayTag(name, value));
     }
     
     /**
