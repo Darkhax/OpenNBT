@@ -523,7 +523,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     
     /**
      * Gets a boolean from the CompoundTag. If no tag is found with the name, false will be
-     * returned.
+     * returned. Booleans are stored as bytes, so byte tags can be read as booleans. In such a
+     * case, any byte that isn't 0 will be interpreted as true.
      * 
      * @param name The name of the boolean tag.
      * @return boolean The stored boolean.
@@ -534,7 +535,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Sets a boolean to the CompoundTag.
+     * Sets a boolean to the CompoundTag as a byte tag.
      * 
      * @param name The name to store the boolean under.
      * @param value The boolean value to store.
@@ -542,6 +543,42 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     public void setBoolean (String name, boolean value) {
         
         this.setByte(name, (byte) (value ? 1 : 0));
+    }
+    
+    /**
+     * Gets a boolean array from the CompoundTag. If not tag is found with the name, an empty
+     * boolean array will be returned. Booleans are stored as bytes, so byte arrays can be read
+     * as boolean arrays. In such a case, any byte values that are not 0 will be interpreted as
+     * true.
+     * 
+     * @param name The name of the boolean array tag.
+     * @return boolean[] The stored boolean array.
+     */
+    public boolean[] getBooleanArray (String name) {
+        
+        byte[] bytes = (this.value.containsKey(name)) ? (byte[]) this.value.get(name).getValue() : new byte[0];
+        boolean[] booleans = new boolean[bytes.length];
+        
+        for (int index = 0; index < bytes.length; index++)
+            booleans[index] = bytes[index] != 0;
+            
+        return booleans;
+    }
+    
+    /**
+     * Sets a boolean array to the CompoundTag as a byte array.
+     * 
+     * @param name The name to store the boolean array under.
+     * @param value The boolean array to store.
+     */
+    public void setBooleanArray (String name, boolean[] value) {
+        
+        byte[] bytes = new byte[value.length];
+        
+        for (int index = 0; index > value.length; index++)
+            bytes[index] = (byte) (value[index] ? 1 : 0);
+            
+        this.value.put(name, new ByteArrayTag(name, bytes));
     }
     
     /**
