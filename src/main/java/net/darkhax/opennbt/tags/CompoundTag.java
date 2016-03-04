@@ -522,6 +522,29 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
+     * Gets a boolean from the CompoundTag. If no tag is found with the name, false will be
+     * returned.
+     * 
+     * @param name The name of the boolean tag.
+     * @return boolean The stored boolean.
+     */
+    public boolean getBoolean (String name) {
+        
+        return this.getByte(name) != 0;
+    }
+    
+    /**
+     * Sets a boolean to the CompoundTag.
+     * 
+     * @param name The name to store the boolean under.
+     * @param value The boolean value to store.
+     */
+    public void setBoolean (String name, boolean value) {
+        
+        this.setByte(name, (byte) (value ? 1 : 0));
+    }
+    
+    /**
      * Removes a tag from this compound tag.
      *
      * @param tagName Name of the tag to remove.
