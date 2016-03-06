@@ -26,7 +26,7 @@ public class NBTHelper {
      * update will only take place when there is a change which potentially breaks
      * functionality.
      */
-    public static final String version = "2.2.0";
+    public static final String version = "2.3.0";
     
     /**
      * Reads the root CompoundTag from the given file.
