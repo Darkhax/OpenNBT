@@ -25,7 +25,7 @@ public class OpenNBTTest {
         // read properly.
         System.out.println("TestInteger: " + tag.getInt("TestInteger"));
         System.out.println("TestString: " + tag.getString("TestString"));
-        System.out.println("TestIntegerArray: " + Arrays.toString(tag.getInArray("TestIntegerArray")));
+        System.out.println("TestIntegerArray: " + Arrays.toString(tag.getIntArray("TestIntegerArray")));
         System.out.println("Tag Dump: " + tag.toString());
     }
 }
