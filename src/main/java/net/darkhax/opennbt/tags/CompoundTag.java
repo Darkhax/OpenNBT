@@ -344,7 +344,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      * @param name The name of the int array tag.
      * @return int[] The stored int array.
      */
-    public int[] getInArray (String name) {
+    public int[] getIntArray (String name) {
         
         return (this.value.containsKey(name)) ? (int[]) this.value.get(name).getValue() : new int[0];
     }
