@@ -74,14 +74,33 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     }
     
     /**
-     * Checks whether the compound tag contains a tag with the specified name.
+     * Checks that the compound tag contains a tag with the specified name.
      *
      * @param tagName Name of the tag to check for.
-     * @return boolean Whether the compound tag contains a tag with the specified name.
+     * @return boolean Whether the compound tag contains a tag with the specified name or not.
      */
     public boolean hasTag (String tagName) {
         
         return this.value.containsKey(tagName);
+    }
+    
+    /**
+     * Checks if a stored Tag has a value equal to the passed object. This will also check that
+     * a tag with the passed name exists, and that it has a non-null value.
+     * 
+     * @param tagName Name of the tag to check for.
+     * @param object The Object to compare the tag value with.
+     * @return boolean Whether the stored tag value equals the passed object or not.
+     */
+    public boolean tagEquals (String tagName, Object object) {
+        
+        if (hasTag(tagName)) {
+            
+            Object value = getTag(tagName).getValue();
+            return (value != null && value.equals(object));
+        }
+        
+        return false;
     }
     
     /**
