@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Comparator;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
@@ -26,7 +27,7 @@ public class NBTHelper {
      * update will only take place when there is a change which potentially breaks
      * functionality.
      */
-    public static final String version = "2.3.0";
+    public static final String VERSION = "2.3.0";
     
     /**
      * Reads the root CompoundTag from the given file.
