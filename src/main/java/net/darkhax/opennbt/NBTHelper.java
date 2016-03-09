@@ -215,4 +215,30 @@ public class NBTHelper {
         out.writeUTF(tag.getName());
         tag.write(out);
     }
+    
+    /**
+     * Uses an array of tag names, to try and dig through the layers of a CompoundTag and get a
+     * specific tag. This is not more efficient, however it is cleaner then doing it all by
+     * hand.
+     * 
+     * An example of where this could be used, is if you want to access a tag which is several
+     * layers deep within another compound tag. Rather than retrieving each compound tag
+     * individually, you can use this to loop through the tags automatically. The down side to
+     * this approach is that it requires previous knowledge of the tag structure.
+     * 
+     * @param tag The CompoundTag to dig through.
+     * @param steps An array of tag names to dig through.
+     * @return CompoundTag The deepest tag that could be found using the provided steps.
+     */
+    public static CompoundTag getDeepTag (CompoundTag tag, String[] steps) {
+        
+        CompoundTag deepTag = tag;
+        
+        if (tag != null)
+            for (String tagName : steps)
+                if (deepTag.hasTag(tagName))
+                    deepTag = deepTag.getCompoundTag(tagName);
+                    
+        return deepTag;
+    }
 }
