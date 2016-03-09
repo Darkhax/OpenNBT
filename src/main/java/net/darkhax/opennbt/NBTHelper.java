@@ -30,6 +30,14 @@ public class NBTHelper {
     public static final String VERSION = "2.3.0";
     
     /**
+     * A standard Comparator for comparing two tags. For the first tag to be greater than the
+     * second, it must not be null, and the tags must not be equal. For the first tag to be
+     * less than the second, it must not be greater than the second tag, and the second tag
+     * must not be null. In all other cases they are equal.
+     */
+    public static final Comparator<Tag> NBT_COMPARATOR = new NBTComparator();
+    
+    /**
      * Reads the root CompoundTag from the given file.
      *
      * @param path Path of the file.
