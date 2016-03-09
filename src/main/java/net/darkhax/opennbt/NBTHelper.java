@@ -27,7 +27,7 @@ public class NBTHelper {
      * update will only take place when there is a change which potentially breaks
      * functionality.
      */
-    public static final String VERSION = "2.3.0";
+    public static final String VERSION = "2.4.0";
     
     /**
      * A standard Comparator for comparing two tags. For the first tag to be greater than the
