@@ -22,7 +22,7 @@ String getVersionFromJava(File file) {
     def outfile = "";
     def ln = System.getProperty("line.separator")
 
-    String prefix = "public static final String version = \"";
+    String prefix = "public static final String VERSION = \"";
     file.eachLine { String s ->
 
         String v = s.trim();
