@@ -594,7 +594,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
         
         byte[] bytes = new byte[value.length];
         
-        for (int index = 0; index > value.length; index++)
+        for (int index = 0; index < value.length; index++)
             bytes[index] = (byte) (value[index] ? 1 : 0);
             
         this.value.put(name, new ByteArrayTag(name, bytes));
