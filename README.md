@@ -39,7 +39,7 @@ If you are using [Maven](https://maven.apache.org/download.cgi) to manage your d
 <dependency>
      <groupId>net.darkhax.opennbt</groupId>
      <artifactId>OpenNBT</artifactId>
-     <version>2.1.15</version>
+     <version>2.4.19</version>
 </dependency>
 ```
 
@@ -53,7 +53,7 @@ repositories {
 
 dependencies {
 
-    compile "net.darkhax.opennbt:OpenNBT:2.1.15"
+    compile "net.darkhax.opennbt:OpenNBT:2.4.19"
 }
 ```
 
