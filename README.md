@@ -8,7 +8,7 @@ The latest source code can be found here on [GitHub](https://github.com/darkhax/
 This project can be built using the Gradle Wrapper included in the project. When the `gradlew build` command is executed, a compiled JAR will be created in `~/build/libs`. Sources and Javadocs will also be generated in the same directory. Alternatively the latest builds of OpenNBT along with Sources and Javadocs can be found [here](http://maven.rubbix.net/net/darkhax/opennbt/OpenNBT)
 
 ##Contributing
-This project is open to contributions from other members of the community. If you would like to contribute towards this project you can open an issue, or create a new pull request. If you create a new pull request, please be sure to read the project [guideleines and coding standards](https://github.com/darkhax/OpenNBT/blob/master/CONTRIBUTING.md).
+This project is open to contributions from other members of the community. If you would like to contribute towards this project you can open an issue, or create a new pull request. If you create a new pull request, please be sure to read the project [guidelines and coding standards](https://github.com/darkhax/OpenNBT/blob/master/CONTRIBUTING.md).
 
 ##Quick Start
 OpenNBT is very easy to start using. The below is an example of how to read and write an NBT file using OpenNBT.
