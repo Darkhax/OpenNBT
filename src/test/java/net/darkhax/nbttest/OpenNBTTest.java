@@ -16,9 +16,8 @@ public class OpenNBTTest {
     public static void main (String[] args) {
         
         runIOTest();
-        runBooleanTest();
-        runCompleteTest();
-        runComplexTest();
+        runBooleanConversionTest();
+        runMassIOTest();
     }
     
     /**
@@ -54,9 +53,9 @@ public class OpenNBTTest {
      * similar to how MC does it. This test is specifically to ensure that this conversion
      * process doesn't get messed up.
      */
-    private static void runBooleanTest () {
+    private static void runBooleanConversionTest () {
         
-        System.out.println("Starting boolean test");
+        System.out.println("Starting boolean conversion test");
         
         // Creates a new CompoundTag and sets various boolean properties to it.
         CompoundTag tag = new CompoundTag("BooleanTag");
@@ -72,18 +71,17 @@ public class OpenNBTTest {
         
         // Results for the test
         System.out.println("Tag Dump: " + tag.toString());
-        System.out.println("The boolean test was " + ((tag.getBoolean("TestTrue") && !tag.getBoolean("TestFalse") && Arrays.equals(tag.getBooleanArray("TestBooleanArray"), new boolean[] { true, false, false, true })) ? "successful!" : "not successful!") + NEW_LINE);
+        System.out.println("The boolean conversion test was " + ((tag.getBoolean("TestTrue") && !tag.getBoolean("TestFalse") && Arrays.equals(tag.getBooleanArray("TestBooleanArray"), new boolean[] { true, false, false, true })) ? "successful!" : "not successful!") + NEW_LINE);
     }
     
     /**
      * Performs an IO test on all of the non-complex tag types. The goal of the test is to
      * write one tag of almost every type to another tag, and then see if it survives being
-     * written and read to the disk. This test does not check serializable objects,
-     * serializable object arrays and tag lists.
+     * written and read to the disk. This test does not check serializable objects.
      */
-    private static void runCompleteTest () {
+    private static void runMassIOTest () {
         
-        System.out.println("Starting basic complete test");
+        System.out.println("Starting mass IO test");
         
         // Sets all of the non-complex data to the test tag.
         CompoundTag tag = new CompoundTag("TestTag");
@@ -100,25 +98,6 @@ public class OpenNBTTest {
         tag.setLongArray("LongArray", new long[] { Long.MIN_VALUE, Long.MIN_VALUE, Long.MAX_VALUE });
         tag.setShortArray("ShortArray", new short[] { Short.MAX_VALUE, Short.MIN_VALUE, Short.MIN_VALUE });
         tag.setStringArray("StringArray", new String[] { "wefqreqgq", "ij3erfo2j", "feiioqvfl" });
-        
-        // Writes the tag to a new file called NBTExample.nbt
-        NBTHelper.writeFile(tag, "NBTExample.nbt");
-        
-        // Reads the NBT data from the NBTExample.nbt file.
-        CompoundTag readTag = NBTHelper.readFile("NBTExample.nbt");
-        
-        // A check to see if the two tags have the same data.
-        System.out.println("Initial Tag Dump: " + tag.toString());
-        System.out.println("Read Tag Dump: " + readTag.toString());
-        System.out.println("The basic complete test was " + ((tag.equals(readTag)) ? "successful!" : "not successful!") + NEW_LINE);
-    }
-    
-    private static void runComplexTest () {
-        
-        System.out.println("Starting complex complete test");
-        
-        // Sets all of the non-complex data to the test tag.
-        CompoundTag tag = new CompoundTag("TestTag");
         tag.setTagList("TagList", Arrays.asList(new StringTag("Tag1", "Value1"), new StringTag("Tag2", "Value2"), new StringTag("Tag3", "Value3")));
         
         // Writes the tag to a new file called NBTExample.nbt
@@ -130,6 +109,6 @@ public class OpenNBTTest {
         // A check to see if the two tags have the same data.
         System.out.println("Initial Tag Dump: " + tag.toString());
         System.out.println("Read Tag Dump: " + readTag.toString());
-        System.out.println("The Complex test was " + ((readTag.equals(tag)) ? "sucessful" : " not successful"));
+        System.out.println("The mass IO test was " + ((tag.equals(readTag)) ? "successful!" : "not successful!") + NEW_LINE);
     }
 }
