@@ -172,7 +172,30 @@ public class NBTHelper {
     }
     
     /**
-     * Reads an NBT tag from a DataInputStream.
+     * Reads an NBT tag from a DataInputStream. This version of the write method handles IO
+     * exceptions with a standard printing of the stack trace.
+     * 
+     * @param in Input stream to read from.
+     * @return Tag The read tag, or null if the tag is an end tag or an IOException happened.
+     */
+    public static Tag readTagThrowless (DataInputStream in) {
+        
+        try {
+            
+            return readTag(in);
+        }
+        
+        catch (IOException exception) {
+            
+            exception.printStackTrace();
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Reads an NBT tag from a DataInputStream. The first data read is the tag ID, the second
+     * is the name and the last is the tag data.
      *
      * @param in Input stream to read from.
      * @return Tag The read tag, or null if the tag is an end tag.
@@ -203,7 +226,28 @@ public class NBTHelper {
     }
     
     /**
-     * Writes a tag to an output stream.
+     * Writes a tag to an output stream. This version of the write method handles IO exceptions
+     * with a standard printing of the stack trace.
+     * 
+     * @param out Output stream to write to.
+     * @param tag Tag to write.
+     */
+    public static void writeTagThrowless (DataOutputStream out, Tag tag) {
+        
+        try {
+            
+            writeTag(out, tag);
+        }
+        
+        catch (IOException exception) {
+            
+            exception.printStackTrace();
+        }
+    }
+    
+    /**
+     * Writes a tag to an output stream. The first piece data to be written is the tag ID, the
+     * second is the tag name, and the third is the tag data.
      *
      * @param out Output stream to write to.
      * @param tag Tag to write.
