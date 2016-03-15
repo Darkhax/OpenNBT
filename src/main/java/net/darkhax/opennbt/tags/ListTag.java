@@ -192,17 +192,14 @@ public class ListTag extends Tag implements Iterable<Tag> {
         }
         
         out.writeInt(this.value.size());
-        
-        for (Tag tag : this.value)
-            NBTHelper.writeTag(out, tag);
+        this.value.forEach(tag -> NBTHelper.writeTagThrowless(out, tag));
     }
     
     @Override
     public ListTag clone () {
         
         List<Tag> newList = new ArrayList<Tag>();
-        this.value.forEach(value -> newList.add(value));
-        
+        this.value.forEach(value -> newList.add(value));      
         return new ListTag(this.getName(), newList);
     }
 }
