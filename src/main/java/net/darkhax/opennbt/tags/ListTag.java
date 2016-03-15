@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import net.darkhax.opennbt.NBTHelper;
+
 /**
  * A Tag for holding a List of other tags.
  */
@@ -169,23 +171,8 @@ public class ListTag extends Tag implements Iterable<Tag> {
             
         int count = in.readInt();
         
-        for (int index = 0; index < count; index++) {
-            
-            Tag tag = null;
-            
-            try {
-                
-                tag = TagRegistry.createInstance(id, "");
-            }
-            
-            catch (TagCreateException e) {
-                
-                throw new IOException("Failed to create tag.", e);
-            }
-            
-            tag.read(in);
-            this.add(tag);
-        }
+        for (int index = 0; index < count; index++)
+            this.add(NBTHelper.readTag(in));
     }
     
     @Override
@@ -207,7 +194,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
         out.writeInt(this.value.size());
         
         for (Tag tag : this.value)
-            tag.write(out);
+            NBTHelper.writeTag(out, tag);
     }
     
     @Override
