@@ -199,7 +199,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
     public ListTag clone () {
         
         List<Tag> newList = new ArrayList<Tag>();
-        this.value.forEach(value -> newList.add(value));      
+        this.value.forEach(value -> newList.add(value));
         return new ListTag(this.getName(), newList);
     }
 }
