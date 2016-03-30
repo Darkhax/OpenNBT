@@ -52,7 +52,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
      * @param name The name of the tag.
      * @param value The value of the tag.
      * @throws IllegalArgumentException Thrown when all tags in the list are not the same, or
-     *             invalid.
+     *         invalid.
      */
     public ListTag(String name, List<Tag> value) throws IllegalArgumentException {
         
@@ -60,7 +60,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
         
         Class<? extends Tag> type = null;
         
-        for (Tag tag : value) {
+        for (final Tag tag : value) {
             
             if (tag == null)
                 throw new IllegalArgumentException("List cannot contain null tags.");
@@ -89,7 +89,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
      */
     public void setValue (List<Tag> value) {
         
-        for (Tag tag : value)
+        for (final Tag tag : value)
             if (tag.getClass() != this.type)
                 throw new IllegalArgumentException("Tag type cannot differ from ListTag type.");
                 
@@ -162,14 +162,14 @@ public class ListTag extends Tag implements Iterable<Tag> {
     @Override
     public void read (DataInputStream in) throws IOException {
         
-        int id = in.readUnsignedByte();
+        final int id = in.readUnsignedByte();
         this.type = TagRegistry.getClassFor(id);
         this.value = new ArrayList<Tag>();
         
         if (id != 0 && this.type == null)
             throw new IOException("Unknown tag ID in ListTag " + id);
             
-        int count = in.readInt();
+        final int count = in.readInt();
         
         for (int index = 0; index < count; index++)
             this.add(NBTHelper.readTag(in));
@@ -183,7 +183,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
             
         else {
             
-            int id = TagRegistry.getIdFor(this.type);
+            final int id = TagRegistry.getIdFor(this.type);
             
             if (id == -1)
                 throw new IOException("ListTag contains unregistered tag class.");
@@ -198,7 +198,7 @@ public class ListTag extends Tag implements Iterable<Tag> {
     @Override
     public ListTag clone () {
         
-        List<Tag> newList = new ArrayList<Tag>();
+        final List<Tag> newList = new ArrayList<Tag>();
         this.value.forEach(value -> newList.add(value));
         return new ListTag(this.getName(), newList);
     }

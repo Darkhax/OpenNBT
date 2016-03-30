@@ -13,7 +13,7 @@ public abstract class Tag implements Cloneable {
     /**
      * The name of the tag.
      */
-    private String name;
+    private final String name;
     
     /**
      * Constructs a new Tag with the specified name.
@@ -67,7 +67,7 @@ public abstract class Tag implements Cloneable {
         if (!(object instanceof Tag))
             return false;
             
-        Tag tag = (Tag) object;
+        final Tag tag = (Tag) object;
         
         if (!this.getName().equals(tag.getName()))
             return false;
@@ -80,15 +80,15 @@ public abstract class Tag implements Cloneable {
             
         if (this.getValue().getClass().isArray() && tag.getValue().getClass().isArray()) {
             
-            int length = Array.getLength(this.getValue());
+            final int length = Array.getLength(this.getValue());
             
             if (Array.getLength(tag.getValue()) != length)
                 return false;
                 
             for (int index = 0; index < length; index++) {
                 
-                Object objectValue = Array.get(this.getValue(), index);
-                Object other = Array.get(tag.getValue(), index);
+                final Object objectValue = Array.get(this.getValue(), index);
+                final Object other = Array.get(tag.getValue(), index);
                 
                 if (objectValue == null && other != null || objectValue != null && !objectValue.equals(other))
                     return false;
@@ -103,7 +103,7 @@ public abstract class Tag implements Cloneable {
     @Override
     public String toString () {
         
-        String name = this.getName() != null && !this.getName().equals("") ? "(" + this.getName() + ")" : "";
+        final String name = this.getName() != null && !this.getName().equals("") ? "(" + this.getName() + ")" : "";
         String value = "";
         
         if (this.getValue() != null) {
@@ -112,7 +112,7 @@ public abstract class Tag implements Cloneable {
             
             if (this.getValue().getClass().isArray()) {
                 
-                StringBuilder build = new StringBuilder();
+                final StringBuilder build = new StringBuilder();
                 build.append("[");
                 
                 for (int index = 0; index < Array.getLength(this.getValue()); index++) {

@@ -107,16 +107,16 @@ public class TagRegistry {
      */
     public static Tag createInstance (int id, String tagName) throws TagCreateException {
         
-        Class<? extends Tag> clazz = getClassFor(id);
+        final Class<? extends Tag> clazz = getClassFor(id);
         
         try {
             
-            Constructor<? extends Tag> constructor = clazz.getDeclaredConstructor(String.class);
+            final Constructor<? extends Tag> constructor = clazz.getDeclaredConstructor(String.class);
             constructor.setAccessible(true);
             return constructor.newInstance(tagName);
         }
         
-        catch (Exception exception) {
+        catch (final Exception exception) {
             
             throw new TagCreateException("Failed to create instance of tag " + clazz.getSimpleName() + ".", exception);
         }
@@ -132,15 +132,13 @@ public class TagRegistry {
      */
     public static int getNextID () {
         
-        for (int id = lastID; lastID < Integer.MAX_VALUE; id++) {
-            
+        for (int id = lastID; lastID < Integer.MAX_VALUE; id++)
             if (!idToTag.containsKey(id)) {
                 
                 lastID = id++;
                 return id;
             }
-        }
-        
+            
         throw new TagIdException();
     }
 }

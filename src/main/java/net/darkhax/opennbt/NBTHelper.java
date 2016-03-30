@@ -87,7 +87,7 @@ public class NBTHelper {
             if (compressed)
                 in = new GZIPInputStream(in);
                 
-            Tag tag = readTag(new DataInputStream(in));
+            final Tag tag = readTag(new DataInputStream(in));
             
             if (!(tag instanceof CompoundTag))
                 throw new IOException("Root tag is not a CompoundTag!");
@@ -95,7 +95,7 @@ public class NBTHelper {
             return (CompoundTag) tag;
         }
         
-        catch (IOException e) {
+        catch (final IOException e) {
             
             e.printStackTrace();
         }
@@ -165,7 +165,7 @@ public class NBTHelper {
             out.close();
         }
         
-        catch (IOException e) {
+        catch (final IOException e) {
             
             e.printStackTrace();
         }
@@ -185,7 +185,7 @@ public class NBTHelper {
             return readTag(in);
         }
         
-        catch (IOException exception) {
+        catch (final IOException exception) {
             
             exception.printStackTrace();
         }
@@ -203,12 +203,12 @@ public class NBTHelper {
      */
     public static Tag readTag (DataInputStream in) throws IOException {
         
-        int id = in.readUnsignedByte();
+        final int id = in.readUnsignedByte();
         
         if (id == 0)
             return null;
             
-        String name = in.readUTF();
+        final String name = in.readUTF();
         Tag tag;
         
         try {
@@ -216,7 +216,7 @@ public class NBTHelper {
             tag = TagRegistry.createInstance(id, name);
         }
         
-        catch (TagCreateException e) {
+        catch (final TagCreateException e) {
             
             throw new IOException("Failed to create tag.", e);
         }
@@ -239,7 +239,7 @@ public class NBTHelper {
             writeTag(out, tag);
         }
         
-        catch (IOException exception) {
+        catch (final IOException exception) {
             
             exception.printStackTrace();
         }
@@ -279,7 +279,7 @@ public class NBTHelper {
         CompoundTag deepTag = tag;
         
         if (tag != null)
-            for (String tagName : steps)
+            for (final String tagName : steps)
                 if (deepTag.hasTag(tagName))
                     deepTag = deepTag.getCompoundTag(tagName);
                     

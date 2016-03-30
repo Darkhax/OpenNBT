@@ -94,10 +94,10 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public boolean tagEquals (String tagName, Object object) {
         
-        if (hasTag(tagName)) {
+        if (this.hasTag(tagName)) {
             
-            Object value = getTag(tagName).getValue();
-            return (value != null && value.equals(object));
+            final Object value = this.getTag(tagName).getValue();
+            return value != null && value.equals(object);
         }
         
         return false;
@@ -134,7 +134,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public byte getByte (String name) {
         
-        return (this.value.containsKey(name)) ? (byte) this.value.get(name).getValue() : 0;
+        return this.value.containsKey(name) ? (byte) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -157,7 +157,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public short getShort (String name) {
         
-        return (this.value.containsKey(name)) ? (short) this.value.get(name).getValue() : 0;
+        return this.value.containsKey(name) ? (short) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -180,7 +180,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public int getInt (String name) {
         
-        return (this.value.containsKey(name)) ? (int) this.value.get(name).getValue() : 0;
+        return this.value.containsKey(name) ? (int) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -203,7 +203,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public long getLong (String name) {
         
-        return (this.value.containsKey(name)) ? (long) this.value.get(name).getValue() : 0;
+        return this.value.containsKey(name) ? (long) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -226,7 +226,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public float getFloat (String name) {
         
-        return (this.value.containsKey(name)) ? (float) this.value.get(name).getValue() : 0;
+        return this.value.containsKey(name) ? (float) this.value.get(name).getValue() : 0;
     }
     
     /**
@@ -249,7 +249,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public double getDouble (String name) {
         
-        return (this.value.containsKey(name)) ? (double) this.value.get(name).getValue() : 0d;
+        return this.value.containsKey(name) ? (double) this.value.get(name).getValue() : 0d;
     }
     
     /**
@@ -272,7 +272,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public byte[] getByteArray (String name) {
         
-        return (this.value.containsKey(name)) ? (byte[]) this.value.get(name).getValue() : new byte[0];
+        return this.value.containsKey(name) ? (byte[]) this.value.get(name).getValue() : new byte[0];
     }
     
     /**
@@ -295,7 +295,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public String getString (String name) {
         
-        return (this.value.containsKey(name)) ? (String) this.value.get(name).getValue() : "";
+        return this.value.containsKey(name) ? (String) this.value.get(name).getValue() : "";
     }
     
     /**
@@ -319,7 +319,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     
     public List<Tag> getTagList (String name) {
         
-        return (this.value.containsKey(name)) ? (List<Tag>) this.value.get(name).getValue() : new ArrayList<Tag>();
+        return this.value.containsKey(name) ? (List<Tag>) this.value.get(name).getValue() : new ArrayList<Tag>();
     }
     
     /**
@@ -342,7 +342,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public CompoundTag getCompoundTag (String name) {
         
-        return (this.value.containsKey(name)) ? (CompoundTag) this.value.get(name) : null;
+        return this.value.containsKey(name) ? (CompoundTag) this.value.get(name) : null;
     }
     
     /**
@@ -365,7 +365,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public int[] getIntArray (String name) {
         
-        return (this.value.containsKey(name)) ? (int[]) this.value.get(name).getValue() : new int[0];
+        return this.value.containsKey(name) ? (int[]) this.value.get(name).getValue() : new int[0];
     }
     
     /**
@@ -388,7 +388,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public double[] getDoubleArray (String name) {
         
-        return (this.value.containsKey(name)) ? (double[]) this.value.get(name).getValue() : new double[0];
+        return this.value.containsKey(name) ? (double[]) this.value.get(name).getValue() : new double[0];
     }
     
     /**
@@ -411,7 +411,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public float[] getFloatArray (String name) {
         
-        return (this.value.containsKey(name)) ? (float[]) this.value.get(name).getValue() : new float[0];
+        return this.value.containsKey(name) ? (float[]) this.value.get(name).getValue() : new float[0];
     }
     
     /**
@@ -434,7 +434,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public long[] getLongArray (String name) {
         
-        return (this.value.containsKey(name)) ? (long[]) this.value.get(name).getValue() : new long[0];
+        return this.value.containsKey(name) ? (long[]) this.value.get(name).getValue() : new long[0];
     }
     
     /**
@@ -457,7 +457,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public Serializable[] getSerializableArray (String name) {
         
-        return (this.value.containsKey(name)) ? (Serializable[]) this.value.get(name).getValue() : new Serializable[0];
+        return this.value.containsKey(name) ? (Serializable[]) this.value.get(name).getValue() : new Serializable[0];
     }
     
     /**
@@ -480,7 +480,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public Serializable getSerializable (String name) {
         
-        return (this.value.containsKey(name)) ? (Serializable) this.value.get(name) : null;
+        return this.value.containsKey(name) ? (Serializable) this.value.get(name) : null;
     }
     
     /**
@@ -503,7 +503,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public short[] getShortArray (String name) {
         
-        return (this.value.containsKey(name)) ? (short[]) this.value.get(name).getValue() : new short[0];
+        return this.value.containsKey(name) ? (short[]) this.value.get(name).getValue() : new short[0];
     }
     
     /**
@@ -526,7 +526,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public String[] getStringArray (String name) {
         
-        return (this.value.containsKey(name)) ? (String[]) this.value.get(name).getValue() : new String[0];
+        return this.value.containsKey(name) ? (String[]) this.value.get(name).getValue() : new String[0];
     }
     
     /**
@@ -575,8 +575,8 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public boolean[] getBooleanArray (String name) {
         
-        byte[] bytes = (this.value.containsKey(name)) ? (byte[]) this.value.get(name).getValue() : new byte[0];
-        boolean[] booleans = new boolean[bytes.length];
+        final byte[] bytes = this.value.containsKey(name) ? (byte[]) this.value.get(name).getValue() : new byte[0];
+        final boolean[] booleans = new boolean[bytes.length];
         
         for (int index = 0; index < bytes.length; index++)
             booleans[index] = bytes[index] != 0;
@@ -592,7 +592,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
      */
     public void setBooleanArray (String name, boolean[] value) {
         
-        byte[] bytes = new byte[value.length];
+        final byte[] bytes = new byte[value.length];
         
         for (int index = 0; index < value.length; index++)
             bytes[index] = (byte) (value[index] ? 1 : 0);
@@ -658,7 +658,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     @Override
     public void read (DataInputStream in) throws IOException {
         
-        List<Tag> tags = new ArrayList<Tag>();
+        final List<Tag> tags = new ArrayList<Tag>();
         
         try {
             
@@ -667,7 +667,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
             while ((tag = NBTHelper.readTag(in)) != null)
                 tags.add(tag);
         }
-        catch (EOFException e) {
+        catch (final EOFException e) {
             
             throw new IOException("Closing EndTag was not found!");
         }
@@ -678,7 +678,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     @Override
     public void write (DataOutputStream out) throws IOException {
         
-        for (Tag tag : this.value.values())
+        for (final Tag tag : this.value.values())
             NBTHelper.writeTag(out, tag);
             
         out.writeByte(0);
@@ -687,7 +687,7 @@ public class CompoundTag extends Tag implements Iterable<Tag> {
     @Override
     public CompoundTag clone () {
         
-        Map<String, Tag> newMap = new LinkedHashMap<String, Tag>();
+        final Map<String, Tag> newMap = new LinkedHashMap<String, Tag>();
         this.value.entrySet().forEach(entry -> newMap.put(entry.getKey(), entry.getValue().clone()));
         
         return new CompoundTag(this.getName(), newMap);

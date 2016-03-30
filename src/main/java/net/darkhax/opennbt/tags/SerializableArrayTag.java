@@ -94,30 +94,28 @@ public class SerializableArrayTag extends Tag {
     public void read (DataInputStream in) throws IOException {
         
         this.value = new Serializable[in.readInt()];
-        ObjectInputStream str = new ObjectInputStream(in);
+        final ObjectInputStream str = new ObjectInputStream(in);
         
-        for (int index = 0; index < this.value.length; index++) {
-            
+        for (int index = 0; index < this.value.length; index++)
             try {
                 
                 this.value[index] = (Serializable) str.readObject();
             }
             
-            catch (ClassNotFoundException e) {
+            catch (final ClassNotFoundException e) {
                 
                 throw new IOException("Class not found while reading SerializableArrayTag!", e);
             }
-        }
     }
     
     @Override
     public void write (DataOutputStream out) throws IOException {
         
         out.writeInt(this.value.length);
-        ObjectOutputStream str = new ObjectOutputStream(out);
+        final ObjectOutputStream str = new ObjectOutputStream(out);
         
-        for (int index = 0; index < this.value.length; index++)
-            str.writeObject(this.value[index]);
+        for (final Serializable element : this.value)
+            str.writeObject(element);
     }
     
     @Override

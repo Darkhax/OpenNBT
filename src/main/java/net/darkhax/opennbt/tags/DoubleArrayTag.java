@@ -98,8 +98,8 @@ public class DoubleArrayTag extends Tag {
         
         out.writeInt(this.value.length);
         
-        for (int index = 0; index < this.value.length; index++)
-            out.writeDouble(this.value[index]);
+        for (final double element : this.value)
+            out.writeDouble(element);
     }
     
     @Override

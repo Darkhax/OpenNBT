@@ -101,8 +101,8 @@ public class StringArrayTag extends Tag {
         
         out.writeInt(this.value.length);
         
-        for (int index = 0; index < this.value.length; index++)
-            out.writeUTF(this.value[index]);
+        for (final String element : this.value)
+            out.writeUTF(element);
     }
     
     @Override

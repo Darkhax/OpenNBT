@@ -101,8 +101,8 @@ public class FloatArrayTag extends Tag {
         
         out.writeInt(this.value.length);
         
-        for (int index = 0; index < this.value.length; index++)
-            out.writeFloat(this.value[index]);
+        for (final float element : this.value)
+            out.writeFloat(element);
     }
     
     @Override

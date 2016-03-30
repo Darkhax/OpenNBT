@@ -101,8 +101,8 @@ public class IntArrayTag extends Tag {
         
         out.writeInt(this.value.length);
         
-        for (int index = 0; index < this.value.length; index++)
-            out.writeInt(this.value[index]);
+        for (final int element : this.value)
+            out.writeInt(element);
     }
     
     @Override

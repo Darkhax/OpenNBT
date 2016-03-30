@@ -58,14 +58,14 @@ public class SerializableTag extends Tag {
     @Override
     public void read (DataInputStream in) throws IOException {
         
-        ObjectInputStream str = new ObjectInputStream(in);
+        final ObjectInputStream str = new ObjectInputStream(in);
         
         try {
             
             this.value = (Serializable) str.readObject();
         }
         
-        catch (ClassNotFoundException e) {
+        catch (final ClassNotFoundException e) {
             
             throw new IOException("Class not found while reading SerializableTag!", e);
         }
@@ -74,7 +74,7 @@ public class SerializableTag extends Tag {
     @Override
     public void write (DataOutputStream out) throws IOException {
         
-        ObjectOutputStream str = new ObjectOutputStream(out);
+        final ObjectOutputStream str = new ObjectOutputStream(out);
         str.writeObject(this.value);
     }
     

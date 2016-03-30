@@ -89,18 +89,16 @@ public class LongArrayTag extends Tag {
     public void read (DataInputStream in) throws IOException {
         
         this.value = new long[in.readInt()];
-        for (int index = 0; index < this.value.length; index++) {
+        for (int index = 0; index < this.value.length; index++)
             this.value[index] = in.readLong();
-        }
     }
     
     @Override
     public void write (DataOutputStream out) throws IOException {
         
         out.writeInt(this.value.length);
-        for (int index = 0; index < this.value.length; index++) {
-            out.writeLong(this.value[index]);
-        }
+        for (final long element : this.value)
+            out.writeLong(element);
     }
     
     @Override

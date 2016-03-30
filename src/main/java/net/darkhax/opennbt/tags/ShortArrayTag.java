@@ -91,18 +91,16 @@ public class ShortArrayTag extends Tag {
     public void read (DataInputStream in) throws IOException {
         
         this.value = new short[in.readInt()];
-        for (int index = 0; index < this.value.length; index++) {
+        for (int index = 0; index < this.value.length; index++)
             this.value[index] = in.readShort();
-        }
     }
     
     @Override
     public void write (DataOutputStream out) throws IOException {
         
         out.writeInt(this.value.length);
-        for (int index = 0; index < this.value.length; index++) {
-            out.writeShort(this.value[index]);
-        }
+        for (final short element : this.value)
+            out.writeShort(element);
     }
     
     @Override
