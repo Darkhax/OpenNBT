@@ -1,7 +1,7 @@
-# OpenNBT
-A Java library for the NBT file format. 
+#OpenNBT
+A Java library for reading and writing NBT files as specified [here](http://minecraft.gamepedia.com/NBT_format). In addition to the base data types supported by the NBT format, OpenNBT allows for new data types to be supported, and comes pre packaged with support for other data types. If you are planning to use OpenNBT in a project that is not related to Minecraft, I would recommend [Extremely Simple Storage](https://github.com/darkhax/Extremely-Simple-Storage). Extremely Simple Storage offers similar functionality to OpenNBT but is not associated Minecraft and is not tag based.
 
-## Source Code
+##Source Code
 The latest source code can be found here on [GitHub](https://github.com/darkhax/OpenNBT). If you are using Git, you can use the following command to clone the project: `git clone git:github.com/darkhax/OpenNBT.git`
 
 ##Building from Source
