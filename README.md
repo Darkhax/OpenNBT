@@ -1,6 +1,9 @@
 #OpenNBT
 A Java library for reading and writing NBT files as specified [here](http://minecraft.gamepedia.com/NBT_format). In addition to the base data types supported by the NBT format, OpenNBT allows for new data types to be supported, and comes pre packaged with support for other data types. If you are planning to use OpenNBT in a project that is not related to Minecraft, I would recommend [Extremely Simple Storage](https://github.com/darkhax/Extremely-Simple-Storage). Extremely Simple Storage offers similar functionality to OpenNBT but is not associated Minecraft and is not tag based.
 
+##NOTICE
+I no longer have a need for this project, so it has been discontinued. All files can be found on the [new maven](http://maven.epoxide.xyz/net/darkhax/opennbt/OpenNBT/). If you are looking for an alternative storage option that is just as simple, check out [Extremely Simple Storage](https://github.com/darkhax/Extremely-Simple-Storage) which offers the same functionality as OpenNBT. Extremely Simple Storage has faster read/write times, greater flexability and lighter weight than OpenNBT. It is also completely unassociated with Minecraft.
+
 ##Source Code
 The latest source code can be found here on [GitHub](https://github.com/darkhax/OpenNBT). If you are using Git, you can use the following command to clone the project: `git clone git:github.com/darkhax/OpenNBT.git`
 
@@ -24,37 +27,6 @@ OpenNBT is very easy to start using. The below is an example of how to read and 
   
   // Reads the NBT data from the NBTExample.nbt file.
   tag = NBTHelper.readFile("NBTExample.nbt");
-```
-
-##Dependency Management
-If you are using [Maven](https://maven.apache.org/download.cgi) to manage your dependencies. Add the following into your `pom.xml` file. Make sure to update the version from time to time. 
-```
-<repositories>
-    <repository>
-        <id>Rubbix.net</id>
-        <url>http://maven.rubbix.net</url>
-    </repository>
-</repositories>
-
-<dependency>
-     <groupId>net.darkhax.opennbt</groupId>
-     <artifactId>OpenNBT</artifactId>
-     <version>2.4.20</version>
-</dependency>
-```
-
-If you are using [Gradle](https://gradle.org) to manage your dependencies, add the following into your `build.gradle` file. Make sure to update the version from time to time.
-```
-repositories {
-
-    mavenCentral()
-    maven { url 'http://maven.rubbix.net' }
-}
-
-dependencies {
-
-    compile "net.darkhax.opennbt:OpenNBT:2.4.20"
-}
 ```
 
 ##Legal Information
