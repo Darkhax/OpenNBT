@@ -37,10 +37,10 @@ public class TagRegistry {
         register(9, ListTag.class);
         register(10, CompoundTag.class);
         register(11, IntArrayTag.class);
+        register(12, LongArrayTag.class);
         
         register(60, DoubleArrayTag.class);
         register(61, FloatArrayTag.class);
-        register(62, LongArrayTag.class);
         register(63, SerializableArrayTag.class);
         register(64, SerializableTag.class);
         register(65, ShortArrayTag.class);
